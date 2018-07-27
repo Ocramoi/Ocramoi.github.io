@@ -1,0 +1,6 @@
+html, body
+{
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom right, white, grey);
+    margin: 0;
+}
