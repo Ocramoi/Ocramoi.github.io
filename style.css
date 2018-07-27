@@ -11,21 +11,47 @@ header
 {
     overflow: auto;
 }
-.conjunto
+@media screen and (max-width: 800px)
 {
-    overflow: auto;
-    margin: 0 auto;
-    width: 100%;
-    margin-bottom: 15px;
+    .conjunto
+    {
+        overflow: auto;
+        margin: 0 auto;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .conjunto img
+    {
+        width: 100%;
+    }
+    .altCriadores
+    {
+        width: 100%;
+        text-align: center;
+    }
 }
-.conjunto img
+@media screen and (min-width: 800px)
 {
-    width: 100%;
-}
-.altCriadores
-{
-    width: 100%;
-    text-align: center;
+    .conjunto
+    {
+        overflow: auto;
+        margin: 0 auto;
+        width: 60%;
+        margin-bottom: 15px;
+    }
+    .conjunto img
+    {
+        width: 100%;
+    }
+    .conjunto img:hover
+    {
+        filter: sepia(35%) brightness(80%);
+    }
+    .altCriadores
+    {
+        width: 100%;
+        text-align: center;
+    }
 }
 /*fim criadores*/
 
