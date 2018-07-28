@@ -1,6 +1,7 @@
 html, body
 {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to bottom right, white, grey);
+    background: linear-gradient(to bottom right, white, rgb(85, 221, 221));
+    /*2 223 223*/
     margin: 0;
 }
