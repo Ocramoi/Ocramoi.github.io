@@ -16,6 +16,14 @@ header
     padding-bottom: 15px;
     color: rgb(236, 236, 236);
 }
+#produtos
+{
+    background-color: white;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 5px 5px 10px grey;
+}
 /*criadores*/
 .criadores
 {

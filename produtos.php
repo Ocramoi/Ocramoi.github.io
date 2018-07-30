@@ -1,30 +1,28 @@
 <!DOCTYPE html>
+<?php
+    include "connect.php";
+    session_start();
+?>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="bodyCriadores.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="manifest" href="manifest.json">
-    <title>Eco Ring</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Produtos</title>
 </head>
 <body>
     <header>ECO RING</header>
     <div id="menuInicial" class="menuInit">
         <a href="index.html">Home</a>
-        <a href="produtos.php">Produtos</a>
-        <a href="#" class="ativo">Criadores</a>
+        <a href="#">Produtos</a>
+        <a href="criadores.html" class="ativo">Criadores</a>
         <a href="contato.html">Contato</a>
         <a class="icone" id="iconeMenu">▼</a>
     </div>
-    <div class="criadores">
-        <div class="conjunto">
-            <img src="fotos/marco.jpg" alt="Marco">
-            <i class="altCriadores">Marco Antônio R. de Toledo</i>
-        </div>
+    <div id="produtos">
+        jasbdfubasdgfsda
     </div>
     <div class="rodape">Texto rodapé</div>
     <script src="app.js"></script>
