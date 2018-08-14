@@ -1,7 +1,7 @@
 const botao = document.getElementById('botPush');
 const indica = document.getElementById('indicacao');
 var push = true;
-botao.addEventListener('click', function()
+botao.addEventListener('click', function muda(e)
 {
     push = !push;
     if(push)
