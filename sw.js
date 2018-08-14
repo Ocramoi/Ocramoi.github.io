@@ -1,5 +1,4 @@
 const arqs = [
-    'sw.js',
     'style.css',
     'manifest.json',
     'index.html',
