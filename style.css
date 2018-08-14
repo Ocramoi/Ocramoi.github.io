@@ -3,3 +3,12 @@ html, body
 {
     font-family: 'Roboto';
 }
+#botPush
+{
+    margin: 0 auto;
+    border: 0;
+    border-radius: 5px;
+    background-color: aquamarine;
+    color: black;
+    font-weight: bold;
+}
