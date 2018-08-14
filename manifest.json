@@ -6,7 +6,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "Scope": "/",
-  "start_url": "https://ocramoi.000webhostapp.com/",
+  "start_url": "https://ocramoi.github.io/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
