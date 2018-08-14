@@ -1,12 +1,12 @@
 {
-  "name": "Eco Ring",
-  "short_name": "ER",
-  "theme_color": "#d0d0d0",
-  "background_color": "#d0d0d0",
-  "display": "fullscreen",
+  "name": "AquaPush",
+  "short_name": "Aqua",
+  "theme_color": "#2196f3",
+  "background_color": "#2196f3",
+  "display": "standalone",
   "orientation": "portrait",
-  "Scope": "https://ocramoi.github.io/",
-  "start_url": "https://ocramoi.github.io/",
+  "Scope": "/",
+  "start_url": "https://ocramoi.000webhostapp.com/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",

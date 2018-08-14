@@ -1,12 +1,13 @@
 const arqs = [
-    'index.html',
     'sw.js',
-    'app.js',
-    'style.css'
+    'style.css',
+    'manifest.json',
+    'index.html',
+    'app.js'
 ]
 
 self.addEventListener('install', async function installSw(e) {
-    var cached2 = await caches.open('eco-ring');
+    var cached2 = await caches.open('aquaPush');
     cached2.addAll(arqs);
 });
 
