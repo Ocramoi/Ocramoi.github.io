@@ -33,8 +33,8 @@ window.addEventListener('load', event=>
         Notification
         .requestPermission()
         .then(function() {
-            var notification = new Notification("Hello, world!");
-            //setInterval(noti, 10000)
+            var notification = new Notification("Tome um copo d'água!");
+            setInterval((new Notification("Tome um copo d'água!")), 10000)
         });
     }
 });
