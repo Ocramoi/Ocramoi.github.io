@@ -27,6 +27,7 @@ window.addEventListener('load', event=>
         var permission = Notification.permission;
 
         if (permission === "denied" || permission === "granted") {
+            setInterval(noti(), 10000);
             return;
         }
 
@@ -34,7 +35,6 @@ window.addEventListener('load', event=>
         .requestPermission()
         .then(function() {
             var notification = new Notification("Tome um copo d'água!");
-            setInterval((new Notification("Tome um copo d'água!")), 10000)
         });
     }
 });
