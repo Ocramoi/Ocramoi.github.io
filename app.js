@@ -16,7 +16,7 @@ window.addEventListener('load', event=>
             console.log('Sw error');
         }
     }
-    if('Notification' in navigator)
+    if('Notification' in window)
     {
         // permissao = Notification.requestPermission();
         // if(permissao === "denied" || permissao === "granted")
