@@ -9,7 +9,7 @@ self.addEventListener('install', async function installSw(e) {
     var cached2 = await caches.open('aquaPush');
     cached2.addAll(arqs);
 
-    setInterval(noti, 10000);
+    //setInterval(noti, 10000);
 });
 
 self.addEventListener('fetch', event =>
@@ -25,21 +25,17 @@ async function checkCache(req)
 
 function noti()
 {
-    //import {push} from 'classe';
-    if(/*push*/true)
+    var pushOps = 
     {
-        var pushOps = 
-        {
-            "body": "Já está na hora de tomar mais um copo d'água!",
-            "icon": "imagens/icon.jpg",
-            "vibrate": [200, 100, 200, 100, 200, 100, 400],
-            "tag": "request"
-            // ,
-            // "actions": [
-            //   { "action": "yes", "title": "Yes", "icon": "images/yes.png" },
-            //   { "action": "no", "title": "No", "icon": "images/no.png" }
-            // ]
-        };
-        ServiceWorkerRegistration.showNotification('Tome água!', pushOps);
-    }
+        "body": "Já está na hora de tomar mais um copo d'água!",
+        "icon": "imagens/icon.jpg",
+        "vibrate": [200, 100, 200, 100, 200, 100, 400],
+        "tag": "request"
+        // ,
+        // "actions": [
+        //   { "action": "yes", "title": "Yes", "icon": "images/yes.png" },
+        //   { "action": "no", "title": "No", "icon": "images/no.png" }
+        // ]
+    };
+
 }

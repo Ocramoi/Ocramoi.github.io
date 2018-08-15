@@ -1,4 +1,5 @@
 let prompoto;
+var permissao;
 const botao = document.getElementById('botPush');
 const indica = document.getElementById('indicacao');
 const botaoAdd = document.getElementById('addApp');
@@ -14,6 +15,27 @@ window.addEventListener('load', event=>
         } catch (error) {
             console.log('Sw error');
         }
+    }
+    if('Notification' in navigator)
+    {
+        // permissao = Notification.requestPermission();
+        // if(permissao === "denied" || permissao === "granted")
+        // {
+        //     return;
+        // }
+        // permissao.then(setInterval(noti, 10000));
+        var permission = Notification.permission;
+
+        if (permission === "denied" || permission === "granted") {
+            return;
+        }
+
+        Notification
+        .requestPermission()
+        .then(function() {
+            // var notification = new Notification("Hello, world!");
+            setInterval(noti, 10000)
+        });
     }
 });
 
@@ -54,4 +76,9 @@ botaoAdd.addEventListener('click', event =>{
 
 window.addEventListener('appinstalled', event => {
     app.logEvent('a2hs', 'installed');
-  });
+});
+
+function noti()
+{
+    var notificacao = new Notification("Tome um copo d'água!");
+}
