@@ -25,8 +25,8 @@ async function checkCache(req)
 
 function noti()
 {
-    import {push} from 'classe';
-    if(push)
+    //import {push} from 'classe';
+    if(/*push*/true)
     {
         var pushOps = 
         {
