@@ -33,9 +33,9 @@ window.addEventListener('load', event=>
 
         Notification
         .requestPermission()
-        .then(/*setInterval(noti, 10000)*/function() {
+        .then(/*function() {
             var notification = new Notification("Tome um copo d'água!");
-        });
+        }*/setInterval(noti(), 10000));
     }
 });
 
