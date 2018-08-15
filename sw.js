@@ -3,7 +3,7 @@ const arqs = [
     'manifest.json',
     'index.html',
     'app.js'
-]
+];
 
 self.addEventListener('install', async function installSw(e) {
     var cached2 = await caches.open('aquaPush');

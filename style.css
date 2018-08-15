@@ -11,4 +11,16 @@ html, body
     background-color: aquamarine;
     color: black;
     font-weight: bold;
+    padding: 5px;
+}
+#addApp
+{
+    margin: 0 auto;
+    border: 0;
+    border-radius: 5px;
+    background-color: aquamarine;
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+    display: none;
 }
