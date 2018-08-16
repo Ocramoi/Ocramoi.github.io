@@ -41,7 +41,11 @@ window.addEventListener('load', event=>
             // var notification = new Notification("Tome um copo d'água!");
             navigator.serviceWorker.ready.then(function notificaSw(e)
             {
-                e.showNotification("Tome um copo d'água!");
+                var notiBody = {
+                    body: 'Já está na hora de tomar mais um copo de água!',
+                    icon: 'imagens/icon.jpg'
+                };
+                e.showNotification("Tome um copo d'água!", notiBody);
             }
             );
         });
@@ -98,7 +102,11 @@ function noti()
         // var notification = new Notification("Tome um copo d'água!");
         navigator.serviceWorker.ready.then(function notificaSw(e)
         {
-            e.showNotification("Tome um copo d'água!");
+            var notiBody = {
+                body: 'Já está na hora de tomar mais um copo de água!',
+                icon: 'imagens/icon.jpg'
+            };
+            e.showNotification("Tome um copo d'água!", notiBody);
         }
         );
     }
