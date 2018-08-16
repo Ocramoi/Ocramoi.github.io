@@ -1,5 +1,5 @@
 let prompoto;
-var permissao;
+var permission;
 const botao = document.getElementById('botPush');
 const indica = document.getElementById('indicacao');
 const botaoAdd = document.getElementById('addApp');
@@ -18,16 +18,9 @@ window.addEventListener('load', event=>
     }
     if('Notification' in window)
     {
-        // permissao = Notification.requestPermission();
-        // if(permissao === "denied" || permissao === "granted")
-        // {
-        //     return;
-        // }
-        // permissao.then(setInterval(noti, 10000));
-        var permission = Notification.permission;
+        permission = Notification.permission;
 
         if (permission === "denied" || permission === "granted") {
-            //setInterval(noti(), 10000);
             return;
         }
 
@@ -36,8 +29,8 @@ window.addEventListener('load', event=>
         .then(function() {
             var notification = new Notification("Tome um copo d'água!");
         });
-        setInterval(noti(), 10000);
     }
+    setInterval(noti, 10000);
 });
 
 // 
@@ -81,5 +74,8 @@ window.addEventListener('appinstalled', event => {
 
 function noti()
 {
-    var notificacao = new Notification("Tome um copo d'água!");
+    if(permission === 'granted')
+    {
+        var notificacao = new Notification("Tome um copo d'água!");
+    }
 }
