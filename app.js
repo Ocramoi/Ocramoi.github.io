@@ -31,7 +31,8 @@ window.addEventListener('load', event=>
             var notification = new Notification("Tome um copo d'água!");
         });
     }
-    setInterval(noti, 10000);
+    // setInterval(noti, 10000);
+    setTimeout(noti, 10000);
 });
 
 // 
@@ -49,13 +50,11 @@ botao.addEventListener('click', function muda(e)
     {
         indica.innerHTML = 'Notificações ativadas!';
         localStorage.setItem('noti', true);
-        var notification = new Notification("Tome um copo d'água!");
     }
     else
     {
         indica.innerHTML = 'Notificações desativadas!';
         localStorage.setItem('noti', false);
-        var notification = new Notification("Tome um copo d'água!");
     }
 });
 
@@ -79,8 +78,6 @@ window.addEventListener('appinstalled', event => {
 
 function noti()
 {
-    if(permission === 'granted')
-    {
-        var notificacao = new Notification("Tome um copo d'água!");
-    }
+    var notification = new Notification("Tome um copo d'água!");
+    setTimeout(noti, 10000);
 }
