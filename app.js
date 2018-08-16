@@ -4,6 +4,7 @@ const botao = document.getElementById('botPush');
 const indica = document.getElementById('indicacao');
 const botaoAdd = document.getElementById('addApp');
 var push = true;
+localStorage.setItem('noti', true);
 
 window.addEventListener('load', event=>
 {
@@ -37,9 +38,9 @@ window.addEventListener('load', event=>
 // 
 // 
 window.addEventListener('beforeinstallprompt', function controlePromp (e){
-e.preventDefault();
-prompoto = e;
-botaoAdd.style.display = 'inline-block';
+    e.preventDefault();
+    prompoto = e;
+    botaoAdd.style.display = 'inline-block';
 });
 botao.addEventListener('click', function muda(e)
 {
@@ -47,10 +48,14 @@ botao.addEventListener('click', function muda(e)
     if(push)
     {
         indica.innerHTML = 'Notificações ativadas!';
+        localStorage.setItem('noti', true);
+        var notification = new Notification("Tome um copo d'água!");
     }
     else
     {
         indica.innerHTML = 'Notificações desativadas!';
+        localStorage.setItem('noti', false);
+        var notification = new Notification("Tome um copo d'água!");
     }
 });
 
