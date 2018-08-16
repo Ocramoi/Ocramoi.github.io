@@ -38,7 +38,12 @@ window.addEventListener('load', event=>
         Notification
         .requestPermission()
         .then(function() {
-            var notification = new Notification("Tome um copo d'água!");
+            // var notification = new Notification("Tome um copo d'água!");
+            navigator.serviceWorker.ready.then(function notificaSw(e)
+            {
+                e.showNotification("Tome um copo d'água!");
+            }
+            );
         });
     }
     // setInterval(noti, 10000);
@@ -90,7 +95,12 @@ function noti()
 {
     if(localStorage.getItem('noti') === 'true')
     {
-        var notification = new Notification("Tome um copo d'água!");
+        // var notification = new Notification("Tome um copo d'água!");
+        navigator.serviceWorker.ready.then(function notificaSw(e)
+        {
+            e.showNotification("Tome um copo d'água!");
+        }
+        );
     }
     setTimeout(noti, 10000);
 }
