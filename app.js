@@ -3,11 +3,21 @@ var permission;
 const botao = document.getElementById('botPush');
 const indica = document.getElementById('indicacao');
 const botaoAdd = document.getElementById('addApp');
-var push = true;
 localStorage.setItem('noti', true);
+var push = localStorage.getItem('noti');
 
 window.addEventListener('load', event=>
 {
+    if(push)
+    {
+        indica.innerHTML = 'Notificações ativadas!';
+        localStorage.setItem('noti', true);
+    }
+    else
+    {
+        indica.innerHTML = 'Notificações desativadas!';
+        localStorage.setItem('noti', false);
+    }
     if('serviceWorker' in navigator)
     {
         try {
