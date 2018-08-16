@@ -78,6 +78,9 @@ window.addEventListener('appinstalled', event => {
 
 function noti()
 {
-    var notification = new Notification("Tome um copo d'água!");
+    if(localStorage.getItem('noti'))
+    {
+        var notification = new Notification("Tome um copo d'água!");
+    }
     setTimeout(noti, 10000);
 }
