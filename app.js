@@ -16,20 +16,6 @@ window.addEventListener('load', event=>
             console.log('Sw error');
         }
     }
-    if('Notification' in window)
-    {
-        permission = Notification.permission;
-
-        if (permission === "denied" || permission === "granted") {
-            return;
-        }
-
-        Notification
-        .requestPermission()
-        .then(function() {
-            var notification = new Notification("Tome um copo d'água!");
-        });
-    }
     setInterval(noti, 10000);
 });
 
@@ -74,8 +60,22 @@ window.addEventListener('appinstalled', event => {
 
 function noti()
 {
-    if(permission === 'granted')
+    if('Notification' in window)
     {
-        var notificacao = new Notification("Tome um copo d'água!");
+        permission = Notification.permission;
+
+        if (permission === "denied" || permission === "granted") {
+            return;
+        }
+
+        Notification
+        .requestPermission()
+        .then(function() {
+            var notification = new Notification("Tome um copo d'água!");
+        });
     }
+    // if(permission === 'granted')
+    // {
+    //     var notificacao = new Notification("Tome um copo d'água!");
+    // }
 }
