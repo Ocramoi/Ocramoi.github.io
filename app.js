@@ -3,7 +3,7 @@ var permission;
 const botao = document.getElementById('botPush');
 const indica = document.getElementById('indicacao');
 const botaoAdd = document.getElementById('addApp');
-localStorage.setItem('noti', true);
+localStorage.setItem('noti', 'true');
 var push = localStorage.getItem('noti');
 
 window.addEventListener('load', event=>
@@ -11,12 +11,12 @@ window.addEventListener('load', event=>
     if(push)
     {
         indica.innerHTML = 'Notificações ativadas!';
-        localStorage.setItem('noti', true);
+        localStorage.setItem('noti', 'true');
     }
     else
     {
         indica.innerHTML = 'Notificações desativadas!';
-        localStorage.setItem('noti', false);
+        localStorage.setItem('noti', 'false');
     }
     if('serviceWorker' in navigator)
     {
@@ -59,12 +59,12 @@ botao.addEventListener('click', function muda(e)
     if(push)
     {
         indica.innerHTML = 'Notificações ativadas!';
-        localStorage.setItem('noti', true);
+        localStorage.setItem('noti', 'true');
     }
     else
     {
         indica.innerHTML = 'Notificações desativadas!';
-        localStorage.setItem('noti', false);
+        localStorage.setItem('noti', 'false');
     }
 });
 
@@ -88,7 +88,7 @@ window.addEventListener('appinstalled', event => {
 
 function noti()
 {
-    if(localStorage.getItem('noti'))
+    if(localStorage.getItem('noti') === 'true')
     {
         var notification = new Notification("Tome um copo d'água!");
     }
