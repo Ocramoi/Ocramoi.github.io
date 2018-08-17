@@ -29,10 +29,10 @@ window.addEventListener('load', event=>
     }
     if('Notification' in window)
     {
+        Notification.requestPermission();
         permission = Notification.permission;
 
         if (permission === "denied" || permission === "granted") {
-            Notification.requestPermission();
             return;
         }
 
