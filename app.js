@@ -38,7 +38,6 @@ window.addEventListener('load', event=>
         Notification
         .requestPermission()
         .then(function() {
-            // var notification = new Notification("Tome um copo d'água!");
             navigator.serviceWorker.ready.then(function notificaSw(e)
             {
                 var notiBody = {
@@ -50,7 +49,6 @@ window.addEventListener('load', event=>
             );
         });
     }
-    // setInterval(noti, 10000);
     setTimeout(noti, 10000);
 });
 
@@ -60,7 +58,7 @@ window.addEventListener('load', event=>
 window.addEventListener('beforeinstallprompt', function controlePromp (e){
     e.preventDefault();
     prompoto = e;
-    botaoAdd.style.display = 'inline-block';
+    botaoAdd.style.display = 'block';
 });
 botao.addEventListener('click', function muda(e)
 {
