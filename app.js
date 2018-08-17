@@ -32,6 +32,7 @@ window.addEventListener('load', event=>
         permission = Notification.permission;
 
         if (permission === "denied" || permission === "granted") {
+            Notification.requestPermission();
             return;
         }
 
@@ -97,7 +98,6 @@ function noti()
 {
     if(localStorage.getItem('noti') === 'true')
     {
-        // var notification = new Notification("Tome um copo d'água!");
         navigator.serviceWorker.ready.then(function notificaSw(e)
         {
             var notiBody = {
