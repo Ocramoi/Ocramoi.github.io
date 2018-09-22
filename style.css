@@ -3,6 +3,13 @@
 html, body
 {
     font-family: 'Opens Sans', sans-serif;
+    padding-bottom: 15px;
+}
+
+a, a:hover
+{
+    color: currentColor;
+    text-decoration: none;
 }
 
 header
@@ -90,10 +97,20 @@ header h1
 /* end carousel */
 
 /* navbar */
+.navbar-brand
+{
+    font-weight: bolder !important;
+}
+
 #navMenu
 {
     background-color: rgb(214, 255, 255) !important;
     margin-bottom: 10px;
+}
+
+.nav-link.dropdown-toggle
+{
+    font-weight: bold !important;
 }
 
 .nav-item.nav-link.active
