@@ -2,7 +2,7 @@
 AOS.init();
 ///
 $(document).ready(function () {
-    $.getJSON("http://200.145.153.175/marcotoledo/data.php", data,
+    $.getJSON("http://200.145.153.175/marcotoledo/data.php",
         function (data, textStatus, jqXHR) {
             $('#loadIndicators').append('<li data-target="#slider" data-slide-to="0" class="active"></li>');
             for(var a = 1; a < data.data.length; a++)
