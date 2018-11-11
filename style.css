@@ -78,6 +78,8 @@ header h1
 .carousel-caption
 {
     background-color: rgba(0, 0, 0, 0.15) !important;
+    width: 100% !important;
+    padding-bottom: 20% !important;
 }
 .carousel-caption h5, p
 {
