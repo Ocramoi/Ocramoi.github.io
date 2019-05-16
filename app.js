@@ -1,5 +1,7 @@
 const tknMapBox = "pk.eyJ1Ijoib2NyYW1vaSIsImEiOiJjanZvOHJlcXcxdzEzNDRxcjd1ZWZiNm0wIn0.JMcj2yGoeojqmBKjP6EqKA";
-var posx = -22.338563, posy = -49.026800, precisao = null;
+const baseUrlPlaces = "https://places.cit.api.here.com/places/v1/discover/search?";
+const opsUrlPlaces = ";r=5000&q=police-station&app_id=mXPKF0rXuX2B4sbsq9yA&app_code=PvubbGo7cP7S2Lfw2j-nSw";
+var posx = -22.338563, posy = -49.026800, precisao = null, mapa;
 
 if(!navigator.geolocation)
 {
@@ -13,21 +15,22 @@ else
             posx = posicao.coords.latitude;
             posy = posicao.coords.longitude;
             precisao = posicao.coords.accuracy;
-            console.log(posicao.coords.accuracy);
             carregaMapa();
+            carregaDelegacias();
         },
         erro=>
         {
-            alert('Erro ao acessar sua localização! Por favor navegue manualmente.<br>'+
+            alert('Erro ao acessar sua localização! Por favor navegue manualmente. '+
                   'Erro: ' + erro.message);
             carregaMapa();
+            carregaDelegacias();
         }
     );
 }
 
 async function carregaMapa()
 {
-    var mapa = L.map('mapa', {
+    mapa = L.map('mapa', {
         center: [posx, posy],
         zoom: 15
     });
@@ -48,4 +51,32 @@ async function carregaMapa()
             radius: precisao
         }).addTo(mapa);
     }
+}
+
+async function carregaDelegacias()
+{
+    $.getJSON(baseUrlPlaces +
+              "in="+posx+","+posy+
+              opsUrlPlaces,
+        function (data, textStatus, jqXHR) {
+            data.results.items.forEach(delegacia => {
+                var delx = delegacia.position[0], 
+                    dely = delegacia.position[1];
+                var iconePolicia = L.icon({
+                    iconUrl: delegacia.icon,
+                    
+                    iconSize:     [60, 65], // size of the icon
+                    iconAnchor:   [25, 65], // point of the icon which will correspond to marker's location
+                    popupAnchor:  [0, -63] // point from which the popup should open relative to the iconAnchor
+                });
+                var del = L.marker([delx, dely],
+                {
+                    icon: iconePolicia,
+                    title: delegacia.title,
+                    alt: delegacia.title
+                }).addTo(mapa);
+                del.bindPopup(delegacia.title);
+            });
+        }
+    );
 }
