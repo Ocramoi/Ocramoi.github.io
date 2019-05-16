@@ -1,6 +1,7 @@
 const tknMapBox = "pk.eyJ1Ijoib2NyYW1vaSIsImEiOiJjanZvOHJlcXcxdzEzNDRxcjd1ZWZiNm0wIn0.JMcj2yGoeojqmBKjP6EqKA";
 const baseUrlPlaces = "https://places.cit.api.here.com/places/v1/discover/search?";
 const opsUrlPlaces = ";r=5000&q=police-station&app_id=mXPKF0rXuX2B4sbsq9yA&app_code=PvubbGo7cP7S2Lfw2j-nSw";
+const googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=";
 var posx = -22.338563, posy = -49.026800, precisao = null, mapa;
 
 if(!navigator.geolocation)
@@ -75,7 +76,7 @@ async function carregaDelegacias()
                     title: delegacia.title,
                     alt: delegacia.title
                 }).addTo(mapa);
-                del.bindPopup(delegacia.title);
+                del.bindPopup("<b>"+delegacia.title+"</b><br/><a href='"+googleMapsUrl+delx+","+dely+"'>"+delegacia.vicinity+"</a>");
             });
         }
     );
