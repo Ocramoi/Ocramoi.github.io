@@ -36,15 +36,15 @@ $('.contTec').click(e =>
 
     if(obj.face != null)
     {
-        contatos += '&nbsp;&nbsp;<a class="linksCont" href="'+obj.face+'"><i class="fab fa-facebook"></i>Facebook</a>&nbsp;&nbsp;<br>';
+        contatos += '<a class="linksCont" href="'+obj.face+'"><i class="fab fa-facebook"></i>Facebook</a><br>';
     }
     if(obj.twitter != null)
     {
-        contatos += '&nbsp;&nbsp;<a class="linksCont" href="https://twitter.com/'+obj.twitter+'"><i class="fab fa-twitter"></i>@'+obj.twitter+'</a>&nbsp;&nbsp;<br>';
+        contatos += '<a class="linksCont" href="https://twitter.com/'+obj.twitter+'"><i class="fab fa-twitter"></i>@'+obj.twitter+'</a><br>';
     }
     if(obj.mail != null)
     {
-        contatos += '&nbsp;&nbsp;<a class="linksCont" href="mailto:'+obj.mail+'"><i class="fas fa-envelope"></i>Email</a>&nbsp;&nbsp;<br>';
+        contatos += '<a class="linksCont" href="mailto:'+obj.mail+'"><i class="fas fa-envelope"></i>Email</a><br>';
     }
 
     if($(e.currentTarget).html() === 'Contato')
