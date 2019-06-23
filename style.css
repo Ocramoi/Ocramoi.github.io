@@ -14,7 +14,17 @@ body
 
 hr
 {
-    border-top: 3px solid #2F4858;
+    border-top: 2px solid #2F4858;
+}
+
+main
+{
+    width: 100%;
+}
+
+i
+{
+    margin-right: 5px;
 }
 
 #init
@@ -105,11 +115,13 @@ hr
 
 .contTec
 {
+    position: relative;
     width: 100%;
     font-weight: bold;
     text-align: center;
-    color: #86182E;
+    color: #86182E !important;
     font-size: 1.2em;
+    cursor: pointer !important;
 }
 
 .contTec a
@@ -117,6 +129,29 @@ hr
     cursor: pointer !important;
     text-decoration: none !important;
     color: currentColor !important;
+}
+
+.menuCont
+{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background-color: #86182E;
+    color: black;
+    transform: translate(-50%, -100%);
+    border: 0;
+    border-radius: 15px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: auto;
+}
+
+.linksCont
+{
+    text-decoration: none !important;
+    color: currentColor !important;
+    cursor: pointer !important;
 }
 
 #rodape
