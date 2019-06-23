@@ -19,7 +19,7 @@ $(window).resize(event =>
 function controlaOpac()
 {
     posY = $(window).scrollTop();
-    var porc = (posY/(altura-100));
+    var porc = (posY/(altura*0.8));
     var opac = 1-porc;
     var txtOpac = 'opacity: ' + opac;
     if(opac >= 0)
