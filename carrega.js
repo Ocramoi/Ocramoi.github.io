@@ -3,7 +3,7 @@ let tecnicos =
     {img: 'marco.jpg', nome: 'Marco Toledo', nascimento: '13/11/2001', habilidades: 'Web full-stack, SQL, Python, C, C++, C#, Java, Unity, Android, outros.', face: 'https://www.facebook.com/marcoantonio.ribeirodetoledo', twitter: '0cramoi', mail: 'mardt@uol.com.br'},
     {img: 'beatriz.jpg', nome: 'Beatriz Garcia', nascimento: '24/10/2002', habilidades: 'PHP, SQL, HTML, C, C++, C#, Java, Unity, Arduino, outros.', face: 'https://www.facebook.com/beatriz.gimenesgarcia', twitter: 'biagimenes__', mail: 'biagimenesgarcia@gmail.com'},
     {img: 'andre.jpg', nome: 'André Creppe', nascimento: '06/08/2002', habilidades: 'PHP, SQL, HTML, C, C++, C#, Java, Unity, Swift, outros.', face: 'https://www.facebook.com/andrecreppe', twitter: 'andrecreppe', mail: 'andrecrepper@gmail.com'},
-    {img: 'marcos.jpg', nome: 'Marcos Dias', nascimento: '12/09/2001', habilidades: 'PHP(OOP), SQL, CSS, JAVA, C, C#, arquitetura MVC, JS, Jquery, HTML, Arduino, ASP.NET, JSON, IONIC 4, outros.', face: 'https://www.facebook.com/marcos.josue.319', twitter: 'MarcosJosuCost1', mail: 'marcosdiasbing@gmail.com'}
+    {img: 'marcos.png', nome: 'Marcos Dias', nascimento: '12/09/2001', habilidades: 'PHP(OOP), SQL, CSS, JAVA, C, C#, arquitetura MVC, JS, Jquery, HTML, Arduino, ASP.NET, JSON, IONIC 4, outros.', face: 'https://www.facebook.com/marcos.josue.319', twitter: 'MarcosJosuCost1', mail: 'marcosdiasbing@gmail.com'}
 ];
 
 for(let k = 0; k < tecnicos.length; k++)
