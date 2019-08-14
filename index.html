@@ -4,36 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://kit.fontawesome.com/5599573a80.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Desenvolvedores</title>
+    <title>Efeito Comunista</title>
 </head>
 <body>
-    <div id="barra">
-        <a href="" class="opsBarra" style="font-weight: bold; grid-area: home;">HOME</a>
-        <a href="" class="opsBarra" style="grid-area: teste1;">TESTE1</a>
-        <a href="" class="opsBarra" style="grid-area: teste2;">TESTE2</a>
-    </div>
+    <img src="ussr.png" alt="USSR" id="bandeira"><br>
 
-    <div id="init">
-        <div id="bv">
-            TÉCNICOS CTI 2019
-        </div>
+    <div id="titulo">
+        EFEITO MANIFESTO COMUNISTA
     </div>
-    
-    <div id="apr">
-        Técnicos:
-    </div>
+    <br>
 
     <main>
-        
+        Converta suas fotos para um divertido diagrama do primeiro capítulo do Mifesto Comunista, escrito por Karl Marx e 
+        lançado em 1848! <br>
+        😍😍😍 <br>
+        <br>
+        Clique abaixo ou arraste seu arquivo: <br>
+        <input type="file" id="inArq" style="display: none;" accept="image/*">
+        <label for="inArq">
+            <div id="labelArq"><i class="fas fa-download"></i>&nbsp;Arquivo</div>
+        </label>
+        <br>
+        Resultado: <br><br>
     </main>
+    <div id="canvas"></div>
 
-    <hr>
-    <div id="rodape">Desenvolido por <a href="">Marco Toledo</a>. <br> 2019</div>
+    <canvas id="worker" style="display: none;"></canvas>
 
+    <script src="https://kit.fontawesome.com/5599573a80.js"></script>
     <script src="jquery.js"></script>
     <script src="index.js"></script>
-    <script src="carrega.js"></script>
 </body>
 </html>
