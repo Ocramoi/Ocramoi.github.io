@@ -5,52 +5,94 @@ body
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(233, 183, 218);
-    scroll-snap-type: y mandatory;
+    background-color: rgb(232, 255, 255);
 }
 
-#primeiro
+#titulo
 {
-    width: 100%;
-    height: 100vh;
-    scroll-snap-align: start;
+    width: 80%;
+    margin: 0 auto;
+    font-weight: bolder;
+    font-size: 3rem;
+    text-align: center;
+}
+
+#fotos, main
+{
+    margin: 0 auto !important;
+    width: 90%;
+    max-width: 1000px;
+}
+
+#fotos img
+{
+    border: 0;
+    border-radius: 10px;
 }
 
 main
 {
-    width: 100%;
-    height: 100vh;
-    scroll-snap-align: start;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 'texto ops';
 }
 
-#teamo
+#texto
 {
-    font-size: 3rem;
-    font-weight: bolder;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#textinho
-{
-    width: 90%;
-    margin-left: 5%;
-    height: 100vh;
     text-align: justify;
-    overflow-y: auto;
-    font-weight: bold;
     font-size: 1.5rem;
+    padding: 5px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
 }
 
-#mundo
+#ops
 {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    /* transform: translate(-100%, -100%); */
-    width: 30%;
-    max-width: 300px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
+#ops a
+{
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+}
+
+.icons
+{
+    width: 80%;
+    max-width: 100px;
+}
+
+@media screen and (max-width: 800px)
+{
+    #titulo
+    {
+        width: 80%;
+        margin: 0 auto;
+        font-weight: bolder;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    main
+    {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 'texto' 
+                             'ops';
+    }
+
+    #ops a
+    {
+        width: auto;
+        display: inline-block;
+    }
+}
+
