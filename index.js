@@ -1,4 +1,6 @@
-var musica = new Audio("mus.mp3"), corneta = new Audio("corn.mp3"), nComemora = 15, nPixels = 0.2, tempo = 3, objs = [], tempoComemora = 18000;
+var musica = new Audio("mus.mp3"), corneta = new Audio("corn.mp3"), 
+    nComemora = 15, nPixels = 0.2, tempo = 3, objs = [], 
+    tempoComemora = 18000, flag = true;
 
 $(document).ready(()=>
 {
@@ -15,7 +17,7 @@ function atualiza()
     var m = (d.getMinutes() < 10) ? "0" + d.getMinutes() : d.getMinutes();
     var s = (d.getSeconds() < 10) ? "0" + d.getSeconds() : d.getSeconds();
     $('main').text(h+":"+m+":"+s);
-    if(d.getFullYear() === 2020) { ativa(); }
+    if(d.getFullYear() === 2020 && flag) { ativa(); flag = false; }
 }
 
 function ativa()
