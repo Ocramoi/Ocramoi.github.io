@@ -15,7 +15,7 @@ function atualiza()
     var m = (d.getMinutes() < 10) ? "0" + d.getMinutes() : d.getMinutes();
     var s = (d.getSeconds() < 10) ? "0" + d.getSeconds() : d.getSeconds();
     $('main').text(h+":"+m+":"+s);
-    if(d.getHours() === 0 && d.getFullYear() === 2020) { ativa(); }
+    if(d.getFullYear() === 2020) { ativa(); }
 }
 
 function ativa()
