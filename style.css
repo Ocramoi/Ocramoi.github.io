@@ -1,30 +1,111 @@
-@font-face
-{
-    font-family: 'Digital-7';
-    src: url('digital-7(mono).ttf');
-}
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
 
 body
 {
     margin: 0;
     padding: 0;
-    background-color: black;
-    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
 }
 
-main
+#top
 {
-    font-family: 'Digital-7';
-    font-size: 20rem;
-    position: absolute;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-    color: red;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 'shark1 topText shark2';
+    align-items: center;
 }
 
-.com
+.shark
 {
-    position: absolute;
-    font-size: 6rem;
+    text-align: center;
+}
+
+.shark img
+{
+    width: 100%;
+    max-width: 150px;
+}
+
+#shark1
+{
+    grid-area: shark1;
+}
+
+#topTxt
+{
+    text-align: center;
+    grid-area: topText;
+}
+
+#topTxt a
+{
+    text-decoration: none !important;
+    font-size: 1.5em;
+    color: blue;
+    font-weight: bold;
+}
+
+#topTxt a:hover, a:checked
+{
+    color: blueviolet;
+}
+
+#shark2
+{
+    grid-area: shark2;
+}
+
+#cont
+{
+    margin-left: 5%;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: 'book contText';
+    /* align-items: center; */
+}
+
+@media (max-width: 800px)
+{
+    #cont
+    {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 'contText' 
+                             'book';
+    }
+}
+
+#book
+{
+    padding: 10px;
+    text-align: center;
+    grid-area: book;
+}
+
+#contText
+{
+    padding: 10px;
+    text-align: justify;
+    grid-area: contText;
+}
+
+#buy
+{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 550px;
+}
+
+#contacts
+{
+    color: blue !important;
+    font-size: 1.5em;
+    margin-left: 5%;
+    width: 90%;
+    text-align: center;
 }
