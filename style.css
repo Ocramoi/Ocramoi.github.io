@@ -4,108 +4,142 @@ body
 {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
+    scroll-snap-type: y mandatory;
 }
 
-#top
+header
 {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: 'shark1 topText shark2';
-    align-items: center;
-}
-
-.shark
-{
-    text-align: center;
-}
-
-.shark img
-{
-    width: 100%;
-    max-width: 150px;
-}
-
-#shark1
-{
-    grid-area: shark1;
-}
-
-#topTxt
-{
-    text-align: center;
-    grid-area: topText;
-}
-
-#topTxt a
-{
-    text-decoration: none !important;
-    font-size: 1.5em;
-    color: blue;
-    font-weight: bold;
-}
-
-#topTxt a:hover, a:checked
-{
-    color: blueviolet;
-}
-
-#shark2
-{
-    grid-area: shark2;
-}
-
-#cont
-{
-    margin-left: 5%;
-    width: 90%;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto;
-    grid-template-areas: 'book contText';
-    /* align-items: center; */
-}
-
-@media (max-width: 800px)
-{
-    #cont
-    {
-        grid-template-columns: auto;
-        grid-template-rows: auto;
-        grid-template-areas: 'contText' 
-                             'book';
-    }
-}
-
-#book
-{
-    padding: 10px;
-    text-align: center;
-    grid-area: book;
-}
-
-#contText
-{
-    padding: 10px;
-    text-align: justify;
-    grid-area: contText;
-}
-
-#buy
-{
+    background-image: url("imgs/cab.jpg");
     display: block;
-    margin: 0 auto;
     width: 100%;
-    max-width: 550px;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    scroll-snap-align: start;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#contacts
+main
 {
-    color: blue !important;
-    font-size: 1.5em;
-    margin-left: 5%;
-    width: 90%;
+    padding-top: 10px;
+    scroll-snap-align: start;
+    margin-left: 10%;
+    width: 80%;
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 'profs atvs';
+}
+
+.titulo
+{
+    width: 100%;
     text-align: center;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+#pesquisa
+{
+    text-align: center;
+    grid-area: profs;
+    padding: 15px;
+}
+
+#inPesq
+{
+    grid-area: in;
+    width: 100%;
+    border: 1px solid rgb(48, 48, 48);
+    border-radius: 5px;
+    max-height: 1.8rem;
+    font-size: 1.25rem;
+}
+
+#inSim
+{
+    grid-area: sim;
+    width: 100%;
+    object-fit: contain;
+    margin-left: 5px;
+    cursor: pointer;
+    max-height: 1.8rem;
+}
+
+#contPesquisa
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 'in sim';
+    max-height: 1.8rem;
+}
+
+#exibe
+{
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+.elExibe
+{
+    font-size: 1.25rem;
+    padding: 10px;
+    border-left: 1px solid black; 
+    border-right: 1px solid black; 
+    border-bottom: 1px solid black;
+}
+
+#atvs
+{
+    grid-area: atvs;
+    padding: 15px;
+}
+
+#atvsExibe
+{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.elAtividade
+{
+    padding: 10px;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+a, a:hover, a:checked, a:active
+{
+    color: rgb(226,62,166) !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+}
+
+#footer
+{
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 850px)
+{
+    main 
+    {
+        margin-left: 5%;
+        width: 90%;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr;
+        grid-template-areas: 'profs' 
+                             'atvs';
+    }
 }
