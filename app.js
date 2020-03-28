@@ -29,7 +29,7 @@ function atualiza(txtPesquisa)
                                     "<div id='elProf'><b>Professor:</b> " + professores[mat].nome + "</div>" +
                                     "<div id='elSala'><b>Sala:</b> " + professores[mat].sala + "</div>" +
                                     "<div id='elEmail'><b>Email:</b> <a href='mailto:'" + professores[mat].email + "' target='_blank'>" + professores[mat].email + "</a></div>" +
-                                    "<div id='elOnline'><b>Aulas online:</b> " + professores[mat].online + "</div>" +
+                                    "<div id='elOnline'><b>Online:</b><br>" + professores[mat].online + "</div>" +
                                 "</div>");
         }
     }
