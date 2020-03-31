@@ -36,7 +36,7 @@ function atualiza(txtPesquisa)
                                     "<div id='elMateria'><b>Matéria:</b> " + arPesq[mat].materia + "</div>" +
                                     "<div id='elProf'><b>Professor:</b> " + arPesq[mat].nome + "</div>" +
                                     "<div id='elSala'><b>Sala:</b> " + arPesq[mat].sala + "</div>" +
-                                    "<div id='elEmail'><b>Email:</b> <a href='mailto:'" + arPesq[mat].email + "' target='_blank'>" + professores[mat].email + "</a></div>" +
+                                    "<div id='elEmail'><b>Email:</b> <a href='mailto:" + arPesq[mat].email + "' target='_blank'>" + professores[mat].email + "</a></div>" +
                                     "<div id='elOnline'><b>Online:</b><br>" + arPesq[mat].online + "</div>" +
                                 "</div>");
         }
