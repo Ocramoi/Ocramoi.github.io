@@ -61,7 +61,7 @@ var professores = [
         email: "moacir@icmc.usp.br",
         online: "Aulas: Quinta (14:30 - Moacir), ?(xx:xx - Leo)<br>" +
                 "<a href='https://ae4.tidia-ae.usp.br/portal'>Tidia</a><br>" +
-                "Avaliações: <a href='run.codes'>run.codes</a> - EX. 15-26 (entrega 13/04)" +
+                "Avaliações: <a href='https://run.codes/'>run.codes</a> - EX. 15-26 (entrega 13/04)<br>" +
                 "<a href='https://t.me/joinchat/Ch9SmR2RHpkx7Mk_iIEZMw'>Grupo do Telegram</a>"
     },
     { 
@@ -80,7 +80,7 @@ var professores = [
 var atividades = [
     {
         dia: '28/03',
-        atividade: 'Ex. Cifra de César ICC no <a href="run.codes">run.codes</a>'
+        atividade: 'Ex. Cifra de César ICC no <a href="https://run.codes/">run.codes</a>'
     },
     {
         dia: '02/04',
@@ -92,10 +92,10 @@ var atividades = [
     },
     {
         dia: '13/04',
-        atividade: 'Ex. 15 ao 21 LabICC no <a href="run.codes">run.codes</a>'
+        atividade: 'Ex. 15 ao 21 LabICC no <a href="https://run.codes/">run.codes</a>'
     },
     {
         dia: '24/04',
-        atividade: 'Ex. Bar Plot ICC no <a href="run.codes">run.codes</a>'
+        atividade: 'Ex. Bar Plot ICC no <a href="https://run.codes/">run.codes</a>'
     }
 ]
