@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+a
+{
+    text-decoration: none;
+    color: currentColor;
+}
+
+body
+{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header
+{
+    height: auto;
+    overflow: auto;
+    background-color: #3e3e3e;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+header img
+{
+    width: 100px;
+    float: left;
+    margin-right: 15px;
+}
+
+#titulo
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #99daca;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#play
+{
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translate(-100%, -50%);
+    font-size: 50px;
+    cursor: pointer;
+}
+
+main
+{
+    margin-left: 10%;
+    width: 80%;
+    text-align: justify;
+}
+
+main:after 
+{
+    content: '';
+    margin-left: 10%;
+    width: 80%;
+    display: inline-block;
+}
+
+.desafio
+{
+    width: 40%;
+    min-width: 250px;
+    background-color: #5ec8ae;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.desafio img
+{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom: 5px;
+}
