@@ -115,10 +115,10 @@ class Map {
 
 			// create the asteroid OU TIEFIGHTER QUEM SABE NÉ
 			let randSpawn = Math.random();
-			if(randSpawn < 0.1)
-				new Tiefighter(this.containerElement, this, position);
-			else if(randSpawn < 0.3)
+			if(randSpawn < 0.08)
 				new StarDestroyer(this.containerElement, this, position);
+			else if(randSpawn < 0.3)
+				new Tiefighter(this.containerElement, this, position);
 			else 
 				new Asteroid(this.containerElement, this, position);
 		}
