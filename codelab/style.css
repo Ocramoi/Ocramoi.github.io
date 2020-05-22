@@ -58,7 +58,7 @@ main
     text-align: justify;
 }
 
-@media only screen and (max-width: 550px)
+@media only screen and (max-width: 700px)
 {
     main
     {
@@ -77,7 +77,7 @@ main:after
 .desafio
 {
     width: 40%;
-    min-width: 250px;
+    min-width: 350px;
     background-color: #5ec8ae;
     text-align: center;
     border-radius: 10px;
