@@ -48,8 +48,9 @@ header img#prof
 {
     grid-area: image;
     width: 100%;
-    max-width: 55px;
+    max-width: 60px;
     margin: auto auto;
+    border-radius: 100%;
 }
 
 header img#menu
@@ -119,16 +120,17 @@ main
 .secao
 {
     width: 100%;
-    color: rgb(44, 44, 65);
-    font-weight: bold;
+    color: #05386B;
+    font-weight: bolder;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
 }
 
 .post
 {
     background-color: #EDF5E1;
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center;
     border: 3px solid rgb(44, 44, 65);
     border-style: dashed;
@@ -138,6 +140,52 @@ main
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+}
+
+.post a
+{
+    color: #05386B;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.post img
+{
+    width: 100%;
+}
+
+footer
+{
+    width: 100%;
+    padding: 10px 0 10px 0;
+    background-color: #EDF5E1;
+    text-align: center;
+    border-top: 3px solid rgb(44, 44, 65);
+    border-bottom: 0;
+    border-right: 0;
+    border-left: 0;
+    border-style: dashed;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.butFooter
+{
+    display: inline-block;
+    cursor: pointer;
+    border: 0;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    background-color: #5CDB95;
+}
+
+.butFooter img
+{
+    height: 80%;
+    width: 80%;
+    margin: auto auto;
 }
 
 @media only screen and (max-width: 700px)
