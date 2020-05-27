@@ -2,7 +2,7 @@
 
 hr
 {
-    border: 1.5px solid rgb(44, 44, 65);
+    border: 1.5px solid #05386B;
     border-style: dashed;
 }
 
@@ -85,18 +85,18 @@ header div#title span
     /* display: block; */
     grid-area: menu;
     position: absolute;
-    background-color: #EDF5E1;
+    background-color: #8EE4AF;
     border-radius: 5px;
     top: 80%;
     right: 0;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: rgb(44, 44, 65);
+    color: #05386B;
     font-size: 1.2rem;
     width: max-content;
     min-width: 200px;
     text-align: center;
-    border: 3px solid rgb(44, 44, 65);
+    border: 3px solid #05386B;
     border-style: dashed;
     line-height: 1.2rem;
 }
@@ -135,6 +135,9 @@ main
     width: 100%;
     margin-bottom: 10px;
     font-size: 1.2rem;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 @media only screen and (max-width: 700px)
