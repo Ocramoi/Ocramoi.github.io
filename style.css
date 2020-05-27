@@ -132,10 +132,11 @@ main
     background-color: #EDF5E1;
     border-radius: 10px;
     text-align: center;
-    border: 3px solid rgb(44, 44, 65);
-    border-style: dashed;
+    /* border: 3px solid rgb(44, 44, 65);
+    border-style: dashed; */
     width: 100%;
     margin-bottom: 10px;
+    padding-bottom: 5px;
     font-size: 1.2rem;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -147,11 +148,14 @@ main
     color: #05386B;
     font-style: italic;
     cursor: pointer;
+    text-decoration: underline;
 }
 
 .post img
 {
     width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 footer
