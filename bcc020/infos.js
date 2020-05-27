@@ -79,23 +79,39 @@ var professores = [
 
 var atividades = [
     {
-        dia: '28/03',
-        atividade: 'Ex. Cifra de César ICC no <a href="https://run.codes/">run.codes</a>'
+        dia: 'XX/XX',
+        atividade: 'Trabalho da fonte Eletrônica'
     },
     {
-        dia: '02/04',
-        atividade: 'Entrega Trabalho 3 Prática em LD'
+        dia: '28/05',
+        atividade: 'Entrega Trabalho 11 (Multiplicador) Prática LD'
     },
     {
-        dia: '03/04',
-        atividade: 'Prova GA (8h-10h)'
+        dia: '31/05',
+        atividade: 'Ex. 6, 7 e 8 (Biblioteca, Ordenar Registros e Substituir palavra) ICC no <a href="https://run.codes/" target="_blank">run.codes</a>'
     },
     {
-        dia: '13/04',
-        atividade: 'Ex. 15 ao 21 LabICC no <a href="https://run.codes/">run.codes</a>'
+        dia: '01/06',
+        atividade: 'Prova 1 Cálculo (online)'
     },
     {
-        dia: '24/04',
-        atividade: 'Ex. Bar Plot ICC no <a href="https://run.codes/">run.codes</a>'
+        dia: '15/06',
+        atividade: 'Entrega do artigo de História da Computação'
+    },
+    {
+        dia: '30/06',
+        atividade: 'Ex. 9 (Banco de Dados) ICC no run.codes'
+    },
+    {
+        dia: '30/06',
+        atividade: 'Ex. 27-38 LabICC no run.codes'
+    },
+    {
+        dia: '01/07',
+        atividade: 'Prova 2 Cálculo (online)'
+    },
+    {
+        dia: 'XX/08',
+        atividade: 'Prova 3 Cálculo (online, aceita gente)'
     }
 ]
