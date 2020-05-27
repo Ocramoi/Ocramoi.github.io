@@ -133,7 +133,6 @@ main
     border: 3px solid rgb(44, 44, 65);
     border-style: dashed;
     width: 100%;
-    padding: 5px;
     margin-bottom: 10px;
     font-size: 1.2rem;
 }
