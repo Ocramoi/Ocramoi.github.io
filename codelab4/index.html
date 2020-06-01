@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Desafio 3</title>
+</head>
+<body>
+	<div id="menu">
+		<div id="pontuacao">
+			Pontos: 0
+		</div>
+		<div id="nivel">
+			Nível: 1
+		</div>
+		<div id="soltar">
+			Soltar: 3
+		</div>
+	</div>
+
+	<div id="timer">60s</div>
+
+	<div id="root">
+		<div id="movable-entity-container">
+			<div id="ocean"></div>
+			<img src="assets/cloud.png" style="left: -150px;" alt="" class="clouds">
+			<img src="assets/cloud.png" style="left: 30px" alt="" class="clouds">
+			<img src="assets/cloud.png" style="left: 150px;" alt="" class="clouds">
+		</div>
+	</div>
+
+	<script src="js/classes/vector.js"></script>
+	<script src="js/abstract-classes/entity.js"></script>
+	<script src="js/abstract-classes/movable-entity.js"></script>
+	<script src="js/classes/rock.js"></script>
+	<script src="js/classes/gold.js"></script>
+	<script src="js/classes/hook.js"></script>
+	<script src="js/classes/player.js"></script>
+	<script src="js/classes/powerUp.js"></script>
+	<script src="js/classes/game-map.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>

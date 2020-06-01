@@ -1,0 +1,79 @@
+* {
+	box-sizing: border-box;
+}
+
+body, html {
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+	background-color: aqua;
+}
+
+#root {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#arena-line {
+	height: 500px;
+	width: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid black;
+	border-radius: 100%;
+}
+
+#movable-entity-container {
+	position: relative;
+	transform: translate(-50%, -50%);
+}
+
+.movable-entity, .entity {
+	position: absolute;
+}
+
+#menu
+{
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	font-weight: bolder;
+	font-size: 2rem;
+}
+
+#ocean
+{
+	position: absolute;
+	background-color: rgb(72, 72, 255);
+	height: 300px; 
+	width: 400px; 
+	top: 50px; 
+	left: 0px; 
+	transform: translate(-50%, -50%) rotate(0rad);
+	z-index: -10;
+}
+
+#timer
+{
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-weight: bolder;
+	font-size: 2rem;
+}
+
+.clouds
+{
+	position: absolute;
+	top: -180px;
+	width: 80px;
+	transform: translate(-50%, 0);
+	z-index: -5;
+	right: 0;
+}
