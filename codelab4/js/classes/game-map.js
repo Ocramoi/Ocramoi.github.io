@@ -232,6 +232,7 @@ class GameMap extends Entity {
 
 	gameOver()
 	{
+		clearInterval(timerInt);
 		var resp = confirm("Fim de jogo! Você alcançou o nível " + (this.level + 1) +". Jogar novamente?");
 		if(resp)
 			window.location.reload();
