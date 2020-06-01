@@ -78,6 +78,7 @@ class GameMap extends Entity {
 
 	nextLevel () {
 		currentTime = MAX_TIME;
+		clearInterval(timerInt);
 		soltarQnt = 3;
 		document.getElementById("soltar").innerText = "Soltar: " + soltarQnt;
 		this.level ++;
@@ -231,9 +232,10 @@ class GameMap extends Entity {
 
 	gameOver()
 	{
-		if(confirm("Fim de jogo! Você alcançou o nível " + (this.level + 1) +". Jogar novamente?"))
-			window.open("../codelab4");
+		var resp = confirm("Fim de jogo! Você alcançou o nível " + (this.level + 1) +". Jogar novamente?");
+		if(resp)
+			window.location.reload();
 		else
-			window.open("https://ocramoi.github.io/");
+			window.open("https://ocramoi.github.io/", "_self");
 	}
 }
