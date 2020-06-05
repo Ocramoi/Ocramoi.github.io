@@ -304,6 +304,7 @@ function graph() {
 
     resolEl.innerHTML = txtResolucao;
     boardT = JXG.JSXGraph.initBoard('graphT', {axis:true, boundingbox: [-10, 10, 10, -10]});
+    centerGraph(board, h, k);
     boardT.create('conic', [a, c, D, b/2, 0, 0]);
 
     boardR = JXG.JSXGraph.initBoard('graphR', {axis:true, boundingbox: [-10, 10, 10, -10]});
