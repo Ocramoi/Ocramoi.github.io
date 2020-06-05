@@ -1,5 +1,6 @@
 var board = JXG.JSXGraph.initBoard('graphOg', {axis:true, boundingbox: [-10, 10, 10, -10]}),
-    boardR = JXG.JSXGraph.initBoard('graph', {axis:true, boundingbox: [-10, 10, 10, -10]}),
+    boardT = JXG.JSXGraph.initBoard('graphT', {axis:true, boundingbox: [-10, 10, 10, -10]}),
+    boardR = JXG.JSXGraph.initBoard('graphR', {axis:true, boundingbox: [-10, 10, 10, -10]}),
     eqEl = document.getElementById("eq"),
     aEl = document.getElementById("a"),
     bEl = document.getElementById("b"),
@@ -147,49 +148,121 @@ function graph() {
             ]; console.log(m);
     
     let detMen = m[0][0] * m[1][1] - (m[0][1] * m[1][0]);
-
-    if(detMen == 0)
-    {
-        alert("Impossível translar!");
-        return;
-    }
     
     let h = 0,
         k = ((m[1][0] * m[0][2]) - (m[1][2] * m[0][0]))/((m[1][1] * m[0][0]) - (m[1][0] * m[0][1]));
     
     h = ((-m[0][1] * k) - m[0][2])/m[0][0];
 
+    let D = (d/2)*h + (e/2)*k + f;
+
+    if(detMen == 0)
+    {
+        txtResolucao += 
+            `<i>Translação:</i> <br><br>
+            g(x, y) = ${a}x² + ${b}xy + ${c}y² + ${d}x + ${e}y + ${f} = 0 <br>
+            M = <table class="tabelaMatriz"> 
+                    <tr>
+                        <th>${m[0][0]}</th>
+                        <th>${m[0][1]}</th> 
+                        <th>${m[0][2]}</th>
+                    </tr>
+                    <tr>
+                        <th>${m[1][0]}</th>
+                        <th>${m[1][1]}</th> 
+                        <th>${m[1][2]}</th>
+                    </tr>
+                    <tr>
+                        <th>${m[2][0]}</th>
+                        <th>${m[2][1]}</th> 
+                        <th>${m[2][2]}</th>
+                    </tr>
+                </table>&nbsp; => <br><br>
+                <table class="tabelaMatriz"> 
+                    <tr>
+                        <th>${m[0][0]}</th>
+                        <th>${m[0][1]}</th>
+                    </tr>
+                    <tr>
+                        <th>${m[1][0]}</th>
+                        <th>${m[1][1]}</th> 
+                    </tr>
+                </table>
+            = ${m[0][0] * m[1][1]} - ${m[0][1] * m[1][0]} = ${detMen} => ${detMen} ${(detMen != 0) ? "!= 0" : "= 0"}<br><br>
+            Impossível translar!
+            `;
+            
+        resolEl.innerHTML = txtResolucao;
+        return;
+    }
+
     txtResolucao += 
     `<i>Translação:</i> <br><br>
     g(x, y) = ${a}x² + ${b}xy + ${c}y² + ${d}x + ${e}y + ${f} = 0 <br>
-    M = <table id="tabelaMatriz"> 
-            <tr>
-                <th>${m[0][0]}</th>
-                <th>${m[0][1]}</th> 
-                <th>${m[0][2]}</th>
-            </tr>
-            <tr>
-                <th>${m[1][0]}</th>
-                <th>${m[1][1]}</th> 
-                <th>${m[1][2]}</th>
-            </tr>
-            <tr>
-                <th>${m[2][0]}</th>
-                <th>${m[2][1]}</th> 
-                <th>${m[2][2]}</th>
-            </tr>
-        </table>&nbsp; => <br><br>
-        <table id="tabelaMatriz"> 
-            <tr>
-                <th>${m[0][0]}</th>
-                <th>${m[0][1]}</th>
-            </tr>
-            <tr>
-                <th>${m[1][0]}</th>
-                <th>${m[1][1]}</th> 
-            </tr>
-        </table>
-    = ${m[0][0] * m[1][1]} - ${m[0][1] * m[1][0]} = ${detMen} => ${detMen} ${(detMen != 0) ? "!= 0" : "0"}<br><br>
+    M = 
+    <table class="tabelaMatriz"> 
+        <tr>
+            <th>a</th>
+            <th>b/2</th> 
+            <th>d/2</th>
+        </tr>
+        <tr>
+            <th>b/2</th>
+            <th>c</th> 
+            <th>e/2</th>
+        </tr>
+        <tr>
+            <th>d/2</th>
+            <th>e/2</th> 
+            <th>f</th>
+        </tr>
+    </table> = 
+    <table class="tabelaMatriz"> 
+        <tr>
+            <th>${m[0][0]}</th>
+            <th>${m[0][1]}</th> 
+            <th>${m[0][2]}</th>
+        </tr>
+        <tr>
+            <th>${m[1][0]}</th>
+            <th>${m[1][1]}</th> 
+            <th>${m[1][2]}</th>
+        </tr>
+        <tr>
+            <th>${m[2][0]}</th>
+            <th>${m[2][1]}</th> 
+            <th>${m[2][2]}</th>
+        </tr>
+    </table>&nbsp; => <br><br>
+    <table class="tabelaMatriz"> 
+        <tr>
+            <th>a</th>
+            <th>b/2</th>
+        </tr>
+        <tr>
+            <th>b/2</th>
+            <th>c</th> 
+        </tr>
+    </table> = 
+    <table class="tabelaMatriz"> 
+        <tr>
+            <th>${m[0][0]}</th>
+            <th>${m[0][1]}</th>
+        </tr>
+        <tr>
+            <th>${m[1][0]}</th>
+            <th>${m[1][1]}</th> 
+        </tr>
+    </table>
+    => ${m[0][0] * m[1][1]} - ${m[0][1] * m[1][0]} = ${detMen} => ${detMen} ${(detMen != 0) ? "!= 0" : "= 0"}<br><br>
+    <div class="sistema">
+        <img src="bracket.png">
+        <span style="float: right">
+            (a)*h + (b/2)*k + (d/2) = 0<br>
+            (b/2)*h + c*k + (d/2) = 0
+        </span>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> <br>
     <div class="sistema">
         <img src="bracket.png">
         <span style="float: right">
@@ -197,13 +270,44 @@ function graph() {
             ${m[1][0]}h + ${m[1][1]}k + ${m[1][2]} = 0
         </span>
     </div> 
-    => O' = (h, k), h = ${h}, k = ${k} => <br><br>
-    g'(u, v) = ${a}u² + ${b}uv + ${c}v² + ${(d/2)*h + (e/2)*k + f} = 0
+    => O' = (h, k) => h = ${h}, k = ${k} => <br><br>
+    => g'(u, v) = a'*u² + b'*uv + c'*v² + (d/2)*h + (e/2)*k + f = 0 <br>
+    => g'(u, v) = ${a}u² + ${b}uv + ${c}v² + ${D} = 0 <br><br>
     `;
     
+    let A = ((a + c) + b*Math.sqrt(1 + Math.pow((a - c)/b, 2)))/2,
+        C = (a + c) - A;
+
+    txtResolucao += 
+    `
+    <i>Rotação:</i> <br><br>
+    cotg(2*θ) = (a - c)/2 = (${a} - ${c})/${b} = ${(a - c)/b} <br>
+    <div class="sistema">
+        <img src="bracket.png">
+        <span style="float: right">
+            a' + c' = a + c<br>
+            a' - c' = b*√(1 + cotg(2*θ)²)
+        </span>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> <br>
+    <div class="sistema">
+        <img src="bracket.png">
+        <span style="float: right">
+            a' + c' = ${a} + ${c}<br>
+            a' - c' = ${b}*√(1 + ${(a - c)/b})
+        </span>
+    </div>
+    => a' = ${A}, b' = ${C} => <br><br>
+    => g"(t, w) = a'*t² + c'*w² + f' = 0 <br>
+    => g"(t, w) = ${A}t² + ${C}w² = ${-D} <br>
+    `
+
     resolEl.innerHTML = txtResolucao;
-    boardR = JXG.JSXGraph.initBoard('graph', {axis:true, boundingbox: [-10, 10, 10, -10]});
-    boardR.create('conic', [a, c, ((d/2)*h + (e/2)*k + f), b/2, 0, 0]);
+    boardT = JXG.JSXGraph.initBoard('graphT', {axis:true, boundingbox: [-10, 10, 10, -10]});
+    boardT.create('conic', [a, c, D, b/2, 0, 0]);
+
+    boardR = JXG.JSXGraph.initBoard('graphR', {axis:true, boundingbox: [-10, 10, 10, -10]});
+    boardR.create('conic', [A, C, D, 0, 0, 0]);
 }
 
 function centerGraph(graph, X, Y) {
