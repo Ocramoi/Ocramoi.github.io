@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cônicas</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" charset="UTF-8" src="https://cdn.jsdelivr.net/npm/jsxgraph@1.1.0/distrib/jsxgraphcore.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.1.0/distrib/jsxgraph.css" />
+</head>
+<body>
+    <header>
+        Calculadora de cônicas
+    </header>
+    <main>
+        Insira os coeficientes da equação:<br>
+        <div id="coefs">
+            <div style="grid-area: A;">a:</div>
+            <input type="text" style="grid-area: aIn;" name="" id="a">
+
+            <div style="grid-area: B;">b:</div>
+            <input type="text" style="grid-area: bIn;" name="" id="b">
+
+            <div style="grid-area: C;">c:</div>
+            <input type="text" style="grid-area: cIn;" name="" id="c">
+
+            <div style="grid-area: D;">d:</div>
+            <input type="text" style="grid-area: dIn;" name="" id="d">
+
+            <div style="grid-area: E;">e:</div>
+            <input type="text" style="grid-area: eIn;" name="" id="e">
+
+            <div style="grid-area: F;">f:</div>
+            <input type="text" style="grid-area: fIn;" name="" id="f">
+        </div>
+        <span id="eq"></span>
+        <br>
+        <div id="buts">
+            <button style="grid-area: calc;" id="calcular">Calcular</button>
+            <button style="grid-area: limpar;" id="limpar">Limpar</button>
+        </div>
+        <br><br>
+        <div class="titGraph">Cônica original:</div>
+        <div id="graphOg"></div>
+        <br>
+        <div class="titGraph">Cônica retificada:</div>
+        <div id="resolucao"></div>
+        <div id="graph"></div>
+    </main>
+    <br>
+    <script src="app.js"></script>
+</body>
+</html>
