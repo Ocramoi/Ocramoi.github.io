@@ -9,7 +9,8 @@ var board = JXG.JSXGraph.initBoard('graphOg', {axis:true, boundingbox: [-10, 10,
     eEl = document.getElementById("e"),
     fEl = document.getElementById("f"),
     calcBut = document.getElementById("calcular"),
-    resolEl = document.getElementById("resolucao");
+    resolEl = document.getElementById("resolucao"),
+    dVerts = 0;
 
 let a = 'a', 
     b = 'b', 
@@ -123,8 +124,9 @@ calcBut.addEventListener("click", (opa) =>
         alert("Um ou mais valores inválidos!");
         return;
     }
-    graphOg();
+    graphOg(10);
     graph();
+    document.getElementById("classConica").innerText = tipoConica();
 });
 
 function updateEq()
@@ -132,9 +134,9 @@ function updateEq()
     eqEl.innerText = `${a}x² + ${b}xy + ${c}y² + ${d}x + ${e}y + ${f} = 0`;
 }
 
-function graphOg()
+function graphOg(mC)
 {
-    board = JXG.JSXGraph.initBoard('graphOg', {axis:true, boundingbox: [-10, 10, 10, -10]});
+    board = JXG.JSXGraph.initBoard('graphOg', {axis:true, boundingbox: [-mC, mC, mC, -mC]});
     board.create('conic', [a, c, f, b/2, d/2, e/2]);
 }
 
@@ -274,43 +276,160 @@ function graph() {
     => g'(u, v) = a'*u² + b'*uv + c'*v² + (d/2)*h + (e/2)*k + f = 0 <br>
     => g'(u, v) = ${a}u² + ${b}uv + ${c}v² + ${D} = 0 <br><br>
     `;
-    
-    let A = ((a + c) + b*Math.sqrt(1 + Math.pow((a - c)/b, 2)))/2,
-        C = (a + c) - A;
 
-    txtResolucao += 
-    `
-    <i>Rotação:</i> <br><br>
-    cotg(2*θ) = (a - c)/2 = (${a} - ${c})/${b} = ${(a - c)/b} <br>
-    <div class="sistema">
-        <img src="bracket.png">
-        <span style="float: right">
-            a' + c' = a + c<br>
-            a' - c' = b*√(1 + cotg(2*θ)²)
-        </span>
-    </div>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> <br>
-    <div class="sistema">
-        <img src="bracket.png">
-        <span style="float: right">
-            a' + c' = ${a} + ${c}<br>
-            a' - c' = ${b}*√(1 + ${(a - c)/b})
-        </span>
-    </div>
-    => a' = ${A}, b' = ${C} => <br><br>
-    => g"(t, w) = a'*t² + c'*w² + f' = 0 <br>
-    => g"(t, w) = ${A}t² + ${C}w² = ${-D} <br>
-    `
+    if(b != 0)
+    {
+        let A = ((a + c) + b*Math.sqrt(1 + Math.pow((a - c)/b, 2)))/2,
+            C = (a + c) - A;
 
-    resolEl.innerHTML = txtResolucao;
-    boardT = JXG.JSXGraph.initBoard('graphT', {axis:true, boundingbox: [-10, 10, 10, -10]});
-    centerGraph(board, h, k);
-    boardT.create('conic', [a, c, D, b/2, 0, 0]);
+        txtResolucao += 
+        `
+        <i>Rotação:</i> <br><br>
+        cotg(2*θ) = (a - c)/b = (${a} - ${c})/${b} = ${(a - c)/b} <br>
+        <div class="sistema">
+            <img src="bracket.png">
+            <span style="float: right">
+                a' + c' = a + c<br>
+                a' - c' = b*√(1 + cotg(2*θ)²)
+            </span>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> <br>
+        <div class="sistema">
+            <img src="bracket.png">
+            <span style="float: right">
+                a' + c' = ${a} + ${c}<br>
+                a' - c' = ${b}*√(1 + ${(a - c)/b})
+            </span>
+        </div>
+        => a' = ${A}, b' = ${C} => <br><br>
+        => g"(t, w) = a'*t² + c'*w² + f' = 0 <br>
+        => g"(t, w) = ${A}t² + ${C}w² = ${-D} <br>
+        `
 
-    boardR = JXG.JSXGraph.initBoard('graphR', {axis:true, boundingbox: [-10, 10, 10, -10]});
-    boardR.create('conic', [A, C, D, 0, 0, 0]);
+        resolEl.innerHTML = txtResolucao;
+
+        completaTabela(A, 0, C, 0, 0, D);
+
+        boardT = JXG.JSXGraph.initBoard('graphT', {axis:true, boundingbox: [-dVerts, dVerts, dVerts, -dVerts]});
+        graphOg(dVerts);
+        centerGraph(board, h, k);
+        boardT.create('conic', [a, c, D, b/2, 0, 0]);
+
+        boardR = JXG.JSXGraph.initBoard('graphR', {axis:true, boundingbox: [-dVerts, dVerts, dVerts, -dVerts]});
+        boardR.create('conic', [A, C, D, 0, 0, 0]);
+    }
+    else
+    {
+        txtResolucao += 
+        `
+        <i>Rotação:</i> <br><br>
+        cotg(2*θ) = (a - c)/b = (${a} - ${c})/${b} = ∄ => <br><br>
+        Impossível rotar!`;
+        resolEl.innerHTML = txtResolucao;
+
+        completaTabela(a, b, c, 0, 0, D);
+
+        boardT = JXG.JSXGraph.initBoard('graphT', {axis:true, boundingbox: [-dVerts, dVerts, dVerts, -dVerts]});
+        graphOg(dVerts);
+        centerGraph(board, h, k);
+
+        boardT.create('conic', [a, c, D, b/2, 0, 0]);
+    }
 }
 
 function centerGraph(graph, X, Y) {
     graph.zoomIn(X*5, Y*5);
+}
+
+function tipoConica() {
+    let discriminant1 = a + c,
+        discriminant2 = a * c,
+        discriminant3 = (a * c * f) - ((Math.pow(d, 2) * c + Math.pow(e, 2) * a) / 4),
+        delta = (a * f) + (f * c);
+
+    if (discriminant2 != 0) {
+        if (discriminant3 != 0) {
+            if (discriminant2 < 0) 
+                return "Hipérbole";
+            if (discriminant1 * discriminant3 > 0) 
+                return "Conjunto vazio";
+
+            if (a != c || b != 0) 
+                return "Elipse";
+
+            return "Circunferência";
+        }
+
+        if (discriminant2 < 0) 
+            return "Duas retas concorrentes";
+
+        return "Ponto";
+    }
+
+    if(discriminant3 != 0) 
+        return "Parabola";
+    if (delta < 0)
+        return "Duas retas paralelas";
+    if(delta == 0) 
+        return "Reta";
+    
+    return "Conjunto vazio";
+}
+
+function completaTabela(ta, tb, tc, td, te, tf) {
+    document.getElementById("cellValFocal").innerText = "NA";
+    document.getElementById("cellFocos").innerText = "NA";
+    document.getElementById("cellCentro").innerText = "NA";
+    document.getElementById("cellVertices").innerText = "NA";
+    document.getElementById("cellDiretriz").innerText = "NA";
+    document.getElementById("cellAssintotas").innerText = "NA";
+
+    if(tipoConica() == "Elipse")
+    {
+        let p = Math.sqrt(Math.abs((tf / ta) - (tf / tc)));
+        document.getElementById("cellValFocal").innerText = p;
+        document.getElementById("cellFocos").innerText = `f1 = (${td + p}, ${te}), f2 = (${td - p}, ${te})`;
+        document.getElementById("cellCentro").innerText = `C = (${td/tf}, ${te/tf})`;
+        document.getElementById("cellVertices").innerText = `v1 = (±√${Math.abs(tf/ta)}, 0), v2 = (0, ±√${Math.abs(tf/tc)})`;
+        dVerts = Math.sqrt(Math.abs(tf/ta));
+    }
+    else if(tipoConica() == "Parabola")
+    {
+        let p;
+        if(ta) {
+            p = ta/4;
+            document.getElementById("cellFocos").innerText = `f = (0, ${p})`;
+            document.getElementById("cellDiretriz").innerHTML = `<b>r:</b> y = -${p}`;
+            document.getElementById("cellVertices").innerText = `v = (0, ${-(tf/te)})`;
+            dVerts = Math.abs(tf/te);
+		} else {
+            p = tc/4;
+            document.getElementById("cellFocos").innerText = `f = (${p}, 0)`;
+            document.getElementById("cellDiretriz").innerHTML = `<b>r:</b> x = -${p}`;
+            document.getElementById("cellVertices").innerText = `v = (${-(tf/te)}, 0)`;
+            dVerts = Math.abs(tf/te);
+		}
+    }
+    else if(tipoConica() == "Hipérbole") {
+        let ha = Math.abs(tf/ta),
+            hc = Math.abs(tf/tc),
+            x = Math.sqrt(ha+hc);
+		if(hc > 0) {
+            document.getElementById("cellFocos").innerText = `f1 = (${x}, 0), f2 = (${-x} , 0)`;
+            document.getElementById("cellVertices").innerText = `v1 = (${Math.sqrt(ha)}, 0), v2 = (0, ${-Math.sqrt(ha)})`;
+            document.getElementById("cellAssintotas").innerHTML = `<b>r:</b> y = x * √(${hc}/${ha}) => y = x * √(${hc/ha}) e <br>
+                                                                   <b>r:</b> y = x * -√(${hc}/${ha}) => y = x * -√(${hc/ha})`;
+            document.getElementById("cellCentro").innerText = `C = (0, 0)`;
+            dVerts = Math.sqrt(ha);
+		} else {
+            document.getElementById("cellFocos").innerText = `f1 = (0, ${x}), f2 = (0, ${-x})`;
+            document.getElementById("cellVertices").innerText = `v1 = (0, ${Math.sqrt(hc)}), v2 = (${-Math.sqrt(hc)}, 0)`;
+            document.getElementById("cellAssintotas").innerHTML = `<b>r:</b> y = x * √(${ha}/${hc}) => y = x * √(${ha/hc}) e <br>
+                                                                   <b>r:</b> y = x * -√(${ha}/${hc}) => y = x * -√(${ha/hc})`;
+            document.getElementById("cellCentro").innerText = `C = (0, 0)`;
+            dVerts = Math.sqrt(hc);
+		}
+    }
+    
+    dVerts *= 3;
 }
