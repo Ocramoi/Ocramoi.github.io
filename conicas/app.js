@@ -127,7 +127,6 @@ calcBut.addEventListener("click", (opa) =>
     }
     graphOg(10);
     graph();
-    document.getElementById("classConica").innerText = tipoConica();
 });
 
 limpaBut.addEventListener("click", (opa) =>
@@ -320,6 +319,7 @@ function graph() {
 
         resolEl.innerHTML = txtResolucao;
 
+        document.getElementById("classConica").innerText = tipoConica(A, 0, C, 0, 0, D);
         completaTabela(A, 0, C, 0, 0, D);
 
         boardT = JXG.JSXGraph.initBoard('graphT', {axis:true, boundingbox: [-dVerts, dVerts, dVerts, -dVerts]});
@@ -339,6 +339,7 @@ function graph() {
         Impossível rotar!`;
         resolEl.innerHTML = txtResolucao;
 
+        document.getElementById("classConica").innerText = tipoConica(a, b, c, 0, 0, D);
         completaTabela(a, b, c, 0, 0, D);
 
         boardT = JXG.JSXGraph.initBoard('graphT', {axis:true, boundingbox: [-dVerts, dVerts, dVerts, -dVerts]});
@@ -353,11 +354,11 @@ function centerGraph(graph, X, Y) {
     graph.zoomIn(X*5, Y*5);
 }
 
-function tipoConica() {
-    let discriminant1 = a + c,
-        discriminant2 = a * c,
-        discriminant3 = (a * c * f) - ((Math.pow(d, 2) * c + Math.pow(e, 2) * a) / 4),
-        delta = (a * f) + (f * c);
+function tipoConica(ta, tb, tc, td, te, tf) {
+    let discriminant1 = ta + tc,
+        discriminant2 = ta * tc,
+        discriminant3 = (ta * tc * tf) - ((Math.pow(td, 2) * tc + Math.pow(te, 2) * ta) / 4),
+        delta = (ta * tf) + (tf * tc);
 
     if (discriminant2 != 0) {
         if (discriminant3 != 0) {
