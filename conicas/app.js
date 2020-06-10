@@ -206,6 +206,10 @@ function graph() {
             `;
             
         resolEl.innerHTML = txtResolucao;
+
+        document.getElementById("classConica").innerText = tipoConica(a, b, c, d, e, f);
+        completaTabela(a, b, c, d, e, f);
+
         return;
     }
 
