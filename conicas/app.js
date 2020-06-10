@@ -155,6 +155,33 @@ function graphOg(mC)
 }
 
 function graph() {
+    let flag = false;
+    if(b != 0)
+    {
+        flag = true;
+        let cotan2 = (a - c)/b,
+            sine2 = 1 / Math.sqrt(1 + Math.pow((a - c)/b, 2)),
+            cosine2 = cotan2 * sine2,
+            mainDeterminant = -2.0,
+            _aDeterminant = -(a + c) -(b/sine2),
+            _cDeterminant = -(a + c) + (b/sine2),
+            sine = Math.sqrt((1 - cosine2) / 2),
+            cosine = Math.sqrt((cosine2 + 1) / 2 ),
+            tmpD = d,
+            tmpE = e,
+            RA = a, RB = b, RC = c, RD = d, RE = e, RF = f;
+
+        if (d) 
+            RD = (tmpD * cosine) + (tmpE * sine);
+        if (RE)
+            RE = (cosine * tmpE) - (sine * tmpD);
+        
+        RA = _aDeterminant / mainDeterminant;
+        RC = _cDeterminant / mainDeterminant;
+        RB = 0;
+        completaTabela(RA, RB, RC, RD, RE, RF);
+    }
+
     let txtResolucao = "";
 
     let m = [ 
@@ -241,7 +268,7 @@ function graph() {
 
             resolEl.innerHTML = txtResolucao;
 
-            completaTabela(A, 0, C, d, e, f);
+            if(!flag) completaTabela(A, 0, C, d, e, f);
 
             graphOg(10);
 
@@ -257,7 +284,7 @@ function graph() {
             Impossível rotar!`;
             resolEl.innerHTML = txtResolucao;
 
-            completaTabela(a, b, c, d, e, f);
+            if(!flag) completaTabela(a, b, c, d, e, f);
         }
 
         return;
@@ -373,7 +400,7 @@ function graph() {
 
         resolEl.innerHTML = txtResolucao;
 
-        completaTabela(A, 0, C, 0, 0, D);
+        if(!flag) completaTabela(A, 0, C, 0, 0, D);
 
         boardT = JXG.JSXGraph.initBoard('graphT', {axis:true, boundingbox: [-dVerts, dVerts, dVerts, -dVerts]});
         graphOg(dVerts);
@@ -392,7 +419,7 @@ function graph() {
         Impossível rotar!`;
         resolEl.innerHTML = txtResolucao;
 
-        completaTabela(a, b, c, 0, 0, D);
+        if(!flag) completaTabela(a, b, c, 0, 0, D);
 
         boardT = JXG.JSXGraph.initBoard('graphT', {axis:true, boundingbox: [-dVerts, dVerts, dVerts, -dVerts]});
         graphOg(dVerts);
