@@ -125,6 +125,9 @@ calcBut.addEventListener("click", (opa) =>
         alert("Um ou mais valores inválidos!");
         return;
     }
+    board = JXG.JSXGraph.initBoard('graphOg', {axis:true, boundingbox: [-10, 10, 10, -10]});
+    boardT = JXG.JSXGraph.initBoard('graphT', {axis:true, boundingbox: [-10, 10, 10, -10]});
+    boardR = JXG.JSXGraph.initBoard('graphR', {axis:true, boundingbox: [-10, 10, 10, -10]});
     graphOg(10);
     graph();
 });
@@ -207,7 +210,6 @@ function graph() {
             
         resolEl.innerHTML = txtResolucao;
 
-        document.getElementById("classConica").innerText = tipoConica(a, b, c, d, e, f);
         completaTabela(a, b, c, d, e, f);
 
         return;
@@ -323,7 +325,6 @@ function graph() {
 
         resolEl.innerHTML = txtResolucao;
 
-        document.getElementById("classConica").innerText = tipoConica(A, 0, C, 0, 0, D);
         completaTabela(A, 0, C, 0, 0, D);
 
         boardT = JXG.JSXGraph.initBoard('graphT', {axis:true, boundingbox: [-dVerts, dVerts, dVerts, -dVerts]});
@@ -343,7 +344,6 @@ function graph() {
         Impossível rotar!`;
         resolEl.innerHTML = txtResolucao;
 
-        document.getElementById("classConica").innerText = tipoConica(a, b, c, 0, 0, D);
         completaTabela(a, b, c, 0, 0, D);
 
         boardT = JXG.JSXGraph.initBoard('graphT', {axis:true, boundingbox: [-dVerts, dVerts, dVerts, -dVerts]});
@@ -394,6 +394,8 @@ function tipoConica(ta, tb, tc, td, te, tf) {
 }
 
 function completaTabela(ta, tb, tc, td, te, tf) {
+    document.getElementById("classConica").innerText = tipoConica(ta, tb, tc, td, te, tf);
+
     document.getElementById("cellValFocal").innerText = "NA";
     document.getElementById("cellFocos").innerText = "NA";
     document.getElementById("cellCentro").innerText = "NA";
@@ -401,7 +403,7 @@ function completaTabela(ta, tb, tc, td, te, tf) {
     document.getElementById("cellDiretriz").innerText = "NA";
     document.getElementById("cellAssintotas").innerText = "NA";
 
-    if(tipoConica() == "Elipse")
+    if(tipoConica(ta, tb, tc, td, te, tf) == "Elipse")
     {
         let p = Math.sqrt(Math.abs((tf / ta) - (tf / tc)));
         document.getElementById("cellValFocal").innerText = p;
@@ -410,7 +412,7 @@ function completaTabela(ta, tb, tc, td, te, tf) {
         document.getElementById("cellVertices").innerText = `v1 = (±√${Math.abs(tf/ta)}, 0), v2 = (0, ±√${Math.abs(tf/tc)})`;
         dVerts = Math.sqrt(Math.abs(tf/ta));
     }
-    else if(tipoConica() == "Parabola")
+    else if(tipoConica(ta, tb, tc, td, te, tf) == "Parabola")
     {
         let p;
         if(ta) {
@@ -427,7 +429,7 @@ function completaTabela(ta, tb, tc, td, te, tf) {
             dVerts = Math.abs(tf/te);
 		}
     }
-    else if(tipoConica() == "Hipérbole") {
+    else if(tipoConica(ta, tb, tc, td, te, tf) == "Hipérbole") {
         let ha = Math.abs(tf/ta),
             hc = Math.abs(tf/tc),
             x = Math.sqrt(ha+hc);
