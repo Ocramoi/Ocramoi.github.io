@@ -9,6 +9,7 @@ var board = JXG.JSXGraph.initBoard('graphOg', {axis:true, boundingbox: [-10, 10,
     eEl = document.getElementById("e"),
     fEl = document.getElementById("f"),
     calcBut = document.getElementById("calcular"),
+    limpaBut = document.getElementById("limpar"),
     resolEl = document.getElementById("resolucao"),
     dVerts = 0;
 
@@ -127,6 +128,17 @@ calcBut.addEventListener("click", (opa) =>
     graphOg(10);
     graph();
     document.getElementById("classConica").innerText = tipoConica();
+});
+
+limpaBut.addEventListener("click", (opa) =>
+{
+    aEl.value = ""; a = "a";
+    bEl.value = ""; b = "b";
+    cEl.value = ""; c = "c";
+    dEl.value = ""; d = "d";
+    eEl.value = ""; e = "e";
+    fEl.value = ""; f = "f";
+    updateEq();
 });
 
 function updateEq()
