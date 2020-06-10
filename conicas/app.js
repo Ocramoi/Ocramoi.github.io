@@ -161,7 +161,7 @@ function graph() {
                 [parseFloat(a), b/2, d/2],
                 [b/2, parseFloat(c), e/2],
                 [d/2, e/2, parseFloat(f)]
-            ]; console.log(m);
+            ];
     
     let detMen = m[0][0] * m[1][1] - (m[0][1] * m[1][0]);
     
@@ -205,12 +205,60 @@ function graph() {
                     </tr>
                 </table>
             = ${m[0][0] * m[1][1]} - ${m[0][1] * m[1][0]} = ${detMen} => ${detMen} ${(detMen != 0) ? "!= 0" : "= 0"}<br><br>
-            Impossível translar!
+            Impossível translar!<br>
             `;
             
         resolEl.innerHTML = txtResolucao;
 
-        completaTabela(a, b, c, d, e, f);
+        if(b != 0)
+        {
+            let A = ((a + c) + b*Math.sqrt(1 + Math.pow((a - c)/b, 2)))/2,
+                C = (a + c) - A;
+
+            txtResolucao += 
+            `
+            <i>Rotação:</i> <br><br>
+            cotg(2*θ) = (a - c)/b = (${a} - ${c})/${b} = ${(a - c)/b} <br>
+            <div class="sistema">
+                <img src="bracket.png">
+                <span style="float: right">
+                    a' + c' = a + c<br>
+                    a' - c' = b*√(1 + cotg(2*θ)²)
+                </span>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> <br>
+            <div class="sistema">
+                <img src="bracket.png">
+                <span style="float: right">
+                    a' + c' = ${a} + ${c}<br>
+                    a' - c' = ${b}*√(1 + ${(a - c)/b})
+                </span>
+            </div>
+            => a' = ${A}, b' = ${C} => <br><br>
+            => g"(t, w) = a'*t² + b*t*w + c'*w² + f' = 0 <br>
+            => g"(t, w) = ${A}t² + b*t*w + ${C}w² = ${-f} <br>
+            `
+
+            resolEl.innerHTML = txtResolucao;
+
+            completaTabela(A, 0, C, d, e, f);
+
+            graphOg(10);
+
+            boardR = JXG.JSXGraph.initBoard('graphR', {axis:true, boundingbox: [-dVerts, dVerts, dVerts, -dVerts]});
+            boardR.create('conic', [A, C, f, 0, d/2, e/2]);
+        }
+        else
+        {
+            txtResolucao += 
+            `
+            <i>Rotação:</i> <br><br>
+            cotg(2*θ) = (a - c)/b = (${a} - ${c})/${b} = ∄ => <br><br>
+            Impossível rotar!`;
+            resolEl.innerHTML = txtResolucao;
+
+            completaTabela(a, b, c, d, e, f);
+        }
 
         return;
     }
