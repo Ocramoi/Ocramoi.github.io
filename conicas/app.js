@@ -263,8 +263,8 @@ function graph() {
             </div>
             => a' = ${A}, b' = ${C} => <br><br>
             => g"(t, w) = a'*t² + b*t*w + c'*w² + f' = 0 <br>
-            => g"(t, w) = ${A}t² + b*t*w + ${C}w² = ${-f} <br>
-            `
+            => g"(t, w) = ${A}t² + b*t*w + ${C}w² = ${-f} [EQ. REDUZIDA!]<br>
+            `;
 
             resolEl.innerHTML = txtResolucao;
 
@@ -366,7 +366,7 @@ function graph() {
     </div> 
     => O' = (h, k) => h = ${h}, k = ${k} => <br><br>
     => g'(u, v) = a'*u² + b'*uv + c'*v² + (d/2)*h + (e/2)*k + f = 0 <br>
-    => g'(u, v) = ${a}u² + ${b}uv + ${c}v² + ${D} = 0 <br><br>
+    => g'(u, v) = ${a}u² + ${b}uv + ${c}v² + ${D} = 0 ${(b == 0) ? "[EQ. REDUZIDA!]" : ''}<br><br>
     `;
 
     if(b != 0)
@@ -395,7 +395,7 @@ function graph() {
         </div>
         => a' = ${A}, b' = ${C} => <br><br>
         => g"(t, w) = a'*t² + c'*w² + f' = 0 <br>
-        => g"(t, w) = ${A}t² + ${C}w² = ${-D} <br>
+        => g"(t, w) = ${A}t² + ${C}w² = ${-D} [EQ. REDUZIDA!]<br>
         `
 
         resolEl.innerHTML = txtResolucao;
