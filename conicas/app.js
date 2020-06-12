@@ -521,6 +521,7 @@ function completaTabela(ta, tb, tc, td, te, tf) {
         let ha = Math.abs(tf/ta),
             hc = Math.abs(tf/tc),
             x = Math.sqrt(ha+hc);
+        document.getElementById("cellValFocal").innerText = x.toFixed(3);
 		if(hc > 0) {
             document.getElementById("cellFocos").innerText = `f1 = (${x.toFixed(3)}, 0), f2 = (${-x.toFixed(3)} , 0)`;
             document.getElementById("cellVertices").innerText = `v1 = (${Math.sqrt(ha).toFixed(3)}, 0), v2 = (0, ${-Math.sqrt(ha).toFixed(3)})`;
