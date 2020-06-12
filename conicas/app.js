@@ -157,20 +157,20 @@ function graphOg(mC)
 
 function graph() {
     let cotan2 = (a - c)/b,
-        sine2 = 1 / Math.sqrt(1 + Math.pow((a - c)/b, 2)),
+        sine2 = 1 / Math.sqrt(1 + Math.pow((a - c) / b, 2)),
         cosine2 = cotan2 * sine2,
         mainDeterminant = -2.0,
-        _aDeterminant = -(a + c) -(b/sine2),
+        _aDeterminant = -(a + c) - (b/sine2),
         _cDeterminant = -(a + c) + (b/sine2),
         sine = Math.sqrt((1 - cosine2) / 2),
-        cosine = Math.sqrt((cosine2 + 1) / 2 ),
+        cosine = Math.sqrt((cosine2 + 1) / 2),
         tmpD = d,
         tmpE = e,
         RA = a, RB = b, RC = c, RD = d, RE = e, RF = f;
 
     if (d) 
         RD = (tmpD * cosine) + (tmpE * sine);
-    if (RE)
+    if (e)
         RE = (cosine * tmpE) - (sine * tmpD);
     
     RA = _aDeterminant / mainDeterminant;
@@ -400,7 +400,7 @@ function graph() {
         </div>
         => a' = ${A}, b' = ${C} => <br><br>
         => g"(t, w) = a'*t² + c'*w² + f' = 0 <br>
-        => g"(t, w) = ${A}t² + ${C}w² = ${-D} [EQ. REDUZIDA!]<br>
+        => g"(t, w) = ${A}*t² + ${C}*w² = ${-D} [EQ. REDUZIDA!]<br>
         `
 
         resolEl.innerHTML = txtResolucao;
@@ -421,7 +421,7 @@ function graph() {
         `
         <i>Rotação:</i> <br><br>
         cotg(2*θ) = (a - c)/b = (${a} - ${c})/${b} = ∄ => <br><br>
-        Impossível rotar!`;
+        Impossível rotacionar!`;
         resolEl.innerHTML = txtResolucao;
 
         completaTabela(a, b, c, 0, 0, D);
@@ -464,7 +464,7 @@ function tipoConica(ta, tb, tc, td, te, tf) {
     }
 
     if(discriminant3 != 0) 
-        return "Parabola";
+        return "Parábola";
     if (delta < 0)
         return "Duas retas paralelas";
     if(delta == 0) 
@@ -490,17 +490,19 @@ function completaTabela(ta, tb, tc, td, te, tf) {
         document.getElementById("cellVertices").innerText = `v1 = (±√${Math.abs(tf/ta).toFixed(3)}, 0), v2 = (0, ±√${Math.abs(tf/tc).toFixed(3)})`;
         dVerts = Math.sqrt(Math.abs(tf/ta));
     }
-    else if(tipoTxt == "Parabola")
+    else if(tipoTxt == "Parábola")
     {
         let p;
         if(ta) {
             p = ta/4;
+            document.getElementById("cellValFocal").innerText = p.toFixed(3);
             document.getElementById("cellFocos").innerText = `f = (0, ${p.toFixed(3)})`;
             document.getElementById("cellDiretriz").innerHTML = `<b>r:</b> y = -${p.toFixed(3)}`;
             document.getElementById("cellVertices").innerText = `v = (0, ${(-(tf/te)).toFixed(3)})`;
             dVerts = Math.abs(tf/te);
 		} else {
             p = tc/4;
+            document.getElementById("cellValFocal").innerText = p.toFixed(3);
             document.getElementById("cellFocos").innerText = `f = (${p.toFixed(3)}, 0)`;
             document.getElementById("cellDiretriz").innerHTML = `<b>r:</b> x = -${p.toFixed(3)}`;
             document.getElementById("cellVertices").innerText = `v = (${(-(tf/te)).toFixed(3)}, 0)`;
