@@ -271,12 +271,12 @@ function graph() {
                 <img src="bracket.png">
                 <span style="float: right">
                     a' + c' = ${a} + ${c}<br>
-                    a' - c' = ${b}*√(1 + ${(a - c)/b})
+                    a' - c' = ${b}*√(1 + ${(a - c)/b}²)
                 </span>
             </div>
             => a' = ${A}, b' = ${C} => <br><br>
             => g"(t, w) = a'*t² + c'*w² + d'*x + e'*y + f' = 0 <br>
-            => g"(t, w) = ${A}t² + ${C}w² + ${d*cosine + e*sine}*x + ${-d*sine + e *cosine}*y = ${-f} [EQ. REDUZIDA!]<br>
+            => g"(t, w) = ${A}t² + ${C}w² + ${d*cosine + e*sine}*x + ${-d*sine + e*cosine}*y = ${-f} [EQ. REDUZIDA!]<br>
             `;
 
             resolEl.innerHTML = txtResolucao;
@@ -403,7 +403,7 @@ function graph() {
             <img src="bracket.png">
             <span style="float: right">
                 a' + c' = ${a} + ${c}<br>
-                a' - c' = ${b}*√(1 + ${(a - c)/b})
+                a' - c' = ${b}*√(1 + ${(a - c)/b}²)
             </span>
         </div>
         => a' = ${A}, b' = ${C} => <br><br>
@@ -524,7 +524,7 @@ function completaTabela(ta, tb, tc, td, te, tf) {
         document.getElementById("cellValFocal").innerText = x.toFixed(3);
 		if(hc > 0) {
             document.getElementById("cellFocos").innerText = `f1 = (${x.toFixed(3)}, 0), f2 = (${-x.toFixed(3)} , 0)`;
-            document.getElementById("cellVertices").innerText = `v1 = (${Math.sqrt(ha).toFixed(3)}, 0), v2 = (0, ${-Math.sqrt(ha).toFixed(3)})`;
+            document.getElementById("cellVertices").innerText = `v1 = (${Math.sqrt(hc).toFixed(3)}, 0), v2 = (0, ${-Math.sqrt(hc).toFixed(3)})`;
             document.getElementById("cellAssintotas").innerHTML = `<b>r:</b> y = x * √(${hc.toFixed(3)}/${ha.toFixed(3)}) => y = x * √(${(hc/ha).toFixed(3)}) e <br>
                                                                    <b>r:</b> y = x * -√(${hc.toFixed(3)}/${ha.toFixed(3)}) => y = x * -√(${(hc/ha).toFixed(3)})`;
             document.getElementById("cellCentro").innerText = `C = (0, 0)`;
