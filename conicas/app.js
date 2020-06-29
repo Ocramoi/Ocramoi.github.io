@@ -366,7 +366,7 @@ function graph() {
         <img src="bracket.png">
         <span style="float: right">
             (a)*h + (b/2)*k + (d/2) = 0<br>
-            (b/2)*h + c*k + (d/2) = 0
+            (b/2)*h + c*k + (e/2) = 0
         </span>
     </div>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> <br>
