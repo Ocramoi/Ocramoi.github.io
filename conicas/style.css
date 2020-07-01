@@ -167,3 +167,9 @@ th, td
     width: 100%;
     column-width: 50%;
 }
+
+#conferenciaConica
+{
+    width: 100%;
+    text-align: center;
+}

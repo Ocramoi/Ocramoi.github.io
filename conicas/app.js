@@ -121,6 +121,12 @@ fEl.addEventListener("keyup", (e) =>
 
 calcBut.addEventListener("click", (opa) =>
 {
+    if(a == 0 && b == 0 && c == 0) {
+        document.getElementById("conferenciaConica").innerHTML= "A equação não representa uma cônica!<br>(╯°□°）╯︵ ┻━┻";
+        return;
+    }
+    document.getElementById("conferenciaConica").innerHTML= "";
+    
     if(isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e) || isNaN(f))
     {
         alert("Um ou mais valores inválidos!");
