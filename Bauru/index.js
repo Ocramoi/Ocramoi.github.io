@@ -105,7 +105,6 @@ function fimDeJogo() {
 
 function checkClicks(clicada) {
     clickedImgs.push(clicada);
-    console.log(clickedImgs);
     if (clickedImgs.length == 2) {
         if (clickedImgs[0].src === clickedImgs[1].src) {
             descobertas += 1;
