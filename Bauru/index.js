@@ -89,7 +89,7 @@ function pecaClick(evento) {
 
 function fimDeJogo() {
     clearInterval(tempoTmout);
-    divMsg.style.display = "block";
+    divMsg.style.display = document.getElementById("textoVitoria").style.display = "block";
     divMsg.style.height = "90%";
     let textoVitoria = `Você venceu!<br>Seu tempo foi <b>${(new Date() - tempoInit)/1000} segundos</b><br><br><i>Imagens encontradas:</i><br><br>`,
         imgsRegistradas = [];

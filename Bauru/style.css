@@ -79,12 +79,14 @@ footer {
     border-radius: 0.2rem;
     padding: 5px;
     cursor: pointer;
+    text-align: center;
 }
 
 #textoVitoria {
     font-size: 1.5rem;
     display: table-cell;
     vertical-align: middle;
+    text-align: center;
     height: 100%;
 }
 
