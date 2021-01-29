@@ -116,7 +116,7 @@ function checkClicks(clicada) {
         }
         else {
             clickTimeout = true;
-            setTimeout(() => { clickTimeout = false; clickedImgs[0].src = clickedImgs[1].src = ""; clickedImgs = []; }, 800);
+            setTimeout(() => { clickTimeout = false; clickedImgs[0].src = clickedImgs[1].src = "assets/imgs/transpBack.png"; clickedImgs = []; }, 800);
         }
     }
 }
