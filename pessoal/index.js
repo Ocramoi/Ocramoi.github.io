@@ -1,8 +1,10 @@
-const reqConteudo = new Request("markdown.html");
+const reqConteudo = new Request("https://raw.githubusercontent.com/Ocramoi/Ocramoi.github.io/master/pessoal/markdown.html");
 
 fetch(reqConteudo)
     .then(e => {
-        document.body.innerHTML += e.text();
+        e.text().then(text => {
+            document.getElementsByTagName('main')[0].innerHTML += text;
+        });
     })
     .catch(er => {
         alert("Erro ao exibir a página!");
