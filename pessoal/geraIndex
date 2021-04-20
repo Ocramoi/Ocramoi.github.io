@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pandoc -f markdown -t html markdown.md -o index.html --css=style.css --self-contained
