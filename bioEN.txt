@@ -1,0 +1,16 @@
+#################################################
+|                  Marco Toledo                 |
+|                  CompSci@ICMC                 |
+|          University of São Paulo (USP)        |
+#################################################
+- IT technician from Colégio Técnico Industrial "Prof. Isaac Portal Roldán"
+- 2020 Computer Science class at the Instituto de Ciências Matemáticas e de Computação (ICMC-USP)
+- Past research with
+    - Augmented reality aided science communication (K-12)
+- Links:
+    - Lattes:   http://lattes.cnpq.br/6250186133889240
+    - Linkedin: https://www.linkedin.com/in/ocramoi/
+    - Github:   https://github.com/Ocramoi/
+- Contact:
+    - Academic email: mardt@usp.br
+    - Personal email: marcoantonioribeirodetoledo@gmail.com
