@@ -146,7 +146,7 @@ main
 
 .post a
 {
-    color: #6272a4;
+    color: #50fa7b !important;
     font-style: italic;
     cursor: pointer;
     text-decoration: underline;
