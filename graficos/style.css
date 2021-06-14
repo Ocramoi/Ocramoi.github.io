@@ -16,6 +16,13 @@ canvas {
 
 img {
     margin: 0 auto;
-    width: 80%;
+    width: 60%;
     display: block;
+}
+
+.divGraficos {
+    border: 1px solid black;
+    width: 60%;
+    height: auto;
+    background-color: white;
 }
