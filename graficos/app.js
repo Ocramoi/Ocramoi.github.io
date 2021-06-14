@@ -169,6 +169,7 @@ let graf3 = new Chart(ctx3, {
         //     fontSize: 28
         // },
         legend: {
+            display: false,
             labels: {
                 fontSize: 18
             },
