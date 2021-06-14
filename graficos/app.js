@@ -92,11 +92,11 @@ let graf1 = new Chart(ctx1, {
     // Configuração de gráfico
     options: {
         // Configuração de título
-        title: {
-            display: true,
-            text: "Total de alunos por ano",
-            fontSize: 28
-        },
+        // title: {
+        //     display: true,
+        //     text: "Total de alunos por ano",
+        //     fontSize: 28
+        // },
         // Configuração de 'grid'
         scales: {
             // Exibe eixo de dados com início em 0, mostrando todo o espaço amostral
@@ -115,6 +115,7 @@ let graf1 = new Chart(ctx1, {
         },
         // Configuração de legenda de área
         legend: {
+            display: false,
             labels: {
                 fontSize: 18
             },
@@ -129,11 +130,11 @@ let graf2 = new Chart(ctx2, {
     type: 'bar',
     data: data2,
     options: {
-        title: {
-            display: true,
-            text: "Total de alunos membros e não membros",
-            fontSize: 28
-        },
+        // title: {
+        //     display: true,
+        //     text: "Total de alunos membros e não membros",
+        //     fontSize: 28
+        // },
         scales: {
             yAxes: [{
                 display: true,
@@ -148,6 +149,7 @@ let graf2 = new Chart(ctx2, {
             }]
         },
         legend: {
+            display: false,
             labels: {
                 fontSize: 18
             },
@@ -161,11 +163,11 @@ let graf3 = new Chart(ctx3, {
     type: 'doughnut',
     data: data3,
     options: {
-        title: {
-            display: true,
-            text: "Adimplência de alunos",
-            fontSize: 28
-        },
+        // title: {
+        //     display: true,
+        //     text: "Adimplência de alunos",
+        //     fontSize: 28
+        // },
         legend: {
             labels: {
                 fontSize: 18
@@ -173,6 +175,7 @@ let graf3 = new Chart(ctx3, {
             position: "bottom"
         },
         resposive: true,
+        cutoutPercentage: 70
     }
 });
 
@@ -180,11 +183,11 @@ let graf4 = new Chart(ctx4, {
     type: "horizontalBar",
     data: data4,
     options: {
-        title: {
-            display: true,
-            text: "Número de alunos por serviço",
-            fontSize: 28
-        },
+        // title: {
+        //     display: true,
+        //     text: "Número de alunos por serviço",
+        //     fontSize: 28
+        // },
         scales: {
             xAxes: [{
                 display: true,
@@ -199,6 +202,7 @@ let graf4 = new Chart(ctx4, {
             }]
         },
         legend: {
+            display: false,
             labels: {
                 fontSize: 18
             },
