@@ -67,18 +67,10 @@
 
                             let delta = dataAtual - dataInic,
                                 totalDias = Math.round(delta / 86400000),
-                                meses = Math.floor(totalDias / 30);
-                            totalDias = totalDias % 30;
-                            let semanas = Math.floor(totalDias / 7),
+                                semanas = Math.floor(totalDias / 7),
                                 dias = totalDias % 7,
                                 expectativa = new Date(dataInic.getTime() + (86400000*7*40)),
                                 tempoGravidez = "";
-                            if (meses > 0) {
-                                if (meses > 1)
-                                    tempoGravidez += `${meses} meses, `;
-                                else
-                                    tempoGravidez += `${meses} mês, `;
-                            }
                             if (semanas > 0) {
                                 if (semanas > 1)
                                     tempoGravidez += `${semanas} semanas, `;
@@ -90,7 +82,7 @@
                             else
                                 tempoGravidez += `${dias} dia`;
 
-                            resultadoCalc.innerHTML = `<b>Você está grávida há ${tempoGravidez}!</b> <br>`;
+                            resultadoCalc.innerHTML = `<b>Você está grávida há ${tempoGravidez}!</b> <br><br>`;
                             resultadoCalc.innerHTML += `A data prevista para o parto é ${expectativa.toLocaleDateString('pt-BR', {weekday : 'long'})}, ` +
                                 `dia ${expectativa.getDay()} de ${expectativa.toLocaleDateString('pt-BR', {month : 'long'})} `;
                             if (dataAtual.getFullYear() != expectativa.getFullYear())
