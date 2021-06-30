@@ -77,11 +77,12 @@
                                 else
                                     tempoGravidez += `${semanas} semana, `;
                             }
-                            if (dias > 0)
-                                tempoGravidez += `${dias} dias`;
-                            else
-                                tempoGravidez += `${dias} dia`;
-
+                            if (dias > 0) {
+                                if (dias > 1)
+                                    tempoGravidez += `${dias} dias`;
+                                else
+                                    tempoGravidez += `${dias} dia`;
+                            }
                             resultadoCalc.innerHTML = `<b>Você está grávida há ${tempoGravidez}!</b> <br><br>`;
                             resultadoCalc.innerHTML += `A data prevista para o parto é ${expectativa.toLocaleDateString('pt-BR', {weekday : 'long'})}, ` +
                                 `dia ${expectativa.getDay()} de ${expectativa.toLocaleDateString('pt-BR', {month : 'long'})} `;
