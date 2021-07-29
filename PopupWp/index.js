@@ -6,14 +6,12 @@ class EntradaPopUp {
         imagens,
         site,
         email,
-        telefone
     ) {
         this.header = header;
         this.titulo = titulo;
         this.texto = texto;
         this.imagens = imagens;
         this.email = email;
-        this.telefone = telefone,
         this.site = site;
     }
 }
@@ -22,7 +20,8 @@ const popupDiv = document.getElementById("popup99"),
       popupEsquerda = document.getElementById("popupEsquerda"),
       popupDireita = document.getElementById("popupDireita"),
       popupFiltros = document.getElementById("filtrosPopup").children,
-      popupThumbs = document.getElementById("thumbsPopup");
+      popupThumbs = document.getElementById("thumbsPopup"),
+      popupImgs = document.getElementById("imgsTxtPopup").children;
 
 const valoresPopup = [
     [
@@ -53,14 +52,30 @@ const valoresPopup = [
             "+1 00-111"
         )
     ]
-]
+];
+
+function setImgs() {
+    for (let i = 0; i < popupImgs.length; ++i) {
+        popupImgs.item(i).addEventListener("click", (e) => {
+            let curImg = popupImgs.item(i);
+
+            if (curImg.getAttribute('full') == 'false') {
+                curImg.setAttribute("style", "position: fixed; width: 50vw; height: 50vh; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: contain; border: 1px solid black; background-color: white;");
+                curImg.setAttribute("full", "true");
+            }
+            else {
+                curImg.setAttribute("style", "height: 50px");
+                curImg.setAttribute("full", "false");
+            }
+        });
+    }
+}
 
 function setPopup(obj) {
     document.getElementById("headerPopup").setAttribute("src", obj.header);
     document.getElementById("tituloPopup").innerText = obj.titulo;
     document.getElementById("linkPopup").innerText = obj.site;
     document.getElementById("mailPopup").innerText = obj.email;
-    document.getElementById("phonePopup").innerText = obj.telefone;
 
     document.getElementById("txtPopup").innerHTML =
         `<b>RESUMO</b><br/><br/>${obj.texto}<br/><br/>`;
@@ -71,9 +86,12 @@ function setPopup(obj) {
 
         curDom.setAttribute("src", link);
         curDom.setAttribute("style", "height: 50px");
+        curDom.setAttribute("full", "false");
 
         document.getElementById("imgsTxtPopup").appendChild(curDom);
     });
+
+    setImgs();
 }
 
 function evThumbs() {
