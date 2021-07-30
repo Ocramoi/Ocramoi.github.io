@@ -117,3 +117,19 @@ main {
     width: 100%;
     padding: 5px;
 }
+
+#socialPopup {
+    width: 100%;
+    text-align: center;
+}
+
+#socialPopup a {
+    display: inline-block;
+    background-color: black;
+    color: white !important;
+    height: 1.5em;
+    line-height: 1.5em;
+    width: 1.5em;
+    margin: 5px;
+    text-decoration: none;
+}

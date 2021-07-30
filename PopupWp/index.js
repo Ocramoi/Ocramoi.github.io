@@ -6,6 +6,11 @@ class EntradaPopUp {
         imagens,
         site,
         email,
+        facebook,
+        twitter,
+        gmail,
+        instagram,
+        linkedin
     ) {
         this.header = header;
         this.titulo = titulo;
@@ -13,6 +18,11 @@ class EntradaPopUp {
         this.imagens = imagens;
         this.email = email;
         this.site = site;
+        this.facebook = facebook;
+        this.twitter = twitter;
+        this.gmail = gmail
+        this.instagram = instagram;
+        this.linkedin = linkedin;
     }
 }
 
@@ -35,7 +45,11 @@ const valoresPopup = [
             ],
             "youtube.com",
             "yt@gmail.com",
-            "+1 11-000",
+            "facebook",
+            "twitter",
+            "gmail",
+            "instagram",
+            "linkedin"
         )
     ],
     [
@@ -49,7 +63,11 @@ const valoresPopup = [
             ],
             "twitter.com",
             "twitter@gmail.com",
-            "+1 00-111"
+            "facebook",
+            "twitter",
+            "gmail",
+            "instagram",
+            "linkedin"
         )
     ]
 ];
@@ -76,6 +94,11 @@ function setPopup(obj) {
     document.getElementById("tituloPopup").innerText = obj.titulo;
     document.getElementById("linkPopup").innerText = obj.site;
     document.getElementById("mailPopup").innerText = obj.email;
+
+    document.getElementById("facePopup").setAttribute("href", obj.facebook);
+    document.getElementById("twitterPopup").setAttribute("href", obj.twitter);
+    document.getElementById("igPopup").setAttribute("href", obj.instagram);
+    document.getElementById("linkedinPopup").setAttribute("href", obj.linkedin);
 
     document.getElementById("txtPopup").innerHTML =
         `<b>RESUMO</b><br/><br/>${obj.texto}<br/><br/>`;
