@@ -22,8 +22,8 @@
 
         <canvas id="canvas" oncontextmenu=event.preventDefault() tabindex=-1></canvas>
     </body>
-    <script type="text/javascript" src="./DrMrCody.js" async></script>
+    <script>var Module = (typeof Module !== "undefined") ? Module : { preRun: [], postRun: [], canvas: document.getElementById('canvas') };</script>
     <script src=https://cdn.jsdelivr.net/gh/eligrey/FileSaver.js/dist/FileSaver.min.js></script>
     <script>function saveFileFromMEMFSToDisk(e,a){var t,i=/^((?!chrome|android).)*safari/i.test(navigator.userAgent),o=FS.readFile(e);t=i?new Blob([o.buffer],{type:"application/octet-stream"}):new Blob([o.buffer],{type:"application/octet-binary"}),saveAs(t,a)}</script>
-    <script>var Module = (typeof Module !== "undefined") ? Module : { preRun: [], postRun: [], canvas: document.getElementById('canvas') };</script>
+    <script type="text/javascript" src="./DrMrCody.js" async></script>
 </html>
