@@ -3,13 +3,11 @@
 
 
 "@types/chart.js@^2.9.32":
-  "integrity" "sha512-d45JiRQwEOlZiKwukjqmqpbqbYzUX2yrXdH9qVn6kXpPDsTYCo6YbfFOlnUaJ8S/DhJwbBJiLsMjKpW5oP8B2A=="
-  "resolved" "https://registry.npmjs.org/@types/chart.js/-/chart.js-2.9.32.tgz"
-  "version" "2.9.32"
+  version "2.9.32"
+  resolved "https://registry.npmjs.org/@types/chart.js/-/chart.js-2.9.32.tgz"
   dependencies:
-    "moment" "^2.10.2"
+    moment "^2.10.2"
 
-"moment@^2.10.2":
-  "integrity" "sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ=="
-  "resolved" "https://registry.npmjs.org/moment/-/moment-2.29.1.tgz"
-  "version" "2.29.1"
+moment@^2.10.2:
+  version "2.29.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.2.tgz#00910c60b20843bcba52d37d58c628b47b1f20e4"
