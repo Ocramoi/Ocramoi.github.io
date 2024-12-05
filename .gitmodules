@@ -1,0 +1,3 @@
+[submodule "napala"]
+	path = napala
+	url = https://github.com/Ocramoi/NAPALARadio
