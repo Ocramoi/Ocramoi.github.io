@@ -31,8 +31,7 @@ jobs:
     steps:
       - name: Build files
         run: |
-          cd ./napala/interface
-          yarn build
+          ls
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
