@@ -30,9 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build files
+        working-directory: ./napala/interface
         run: |
-          ls 
-          cd napala/interface
           yarn build
       - name: Checkout
         uses: actions/checkout@v4
