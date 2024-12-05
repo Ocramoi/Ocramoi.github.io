@@ -31,8 +31,8 @@ jobs:
     steps:
       - name: Build files
         run: |
-          ls
-          cd ./napala/interface
+          ls ${{ github.workspace }}
+          cd ${{ github.workspace }}/napala/interface
           yarn build
       - name: Checkout
         uses: actions/checkout@v4
