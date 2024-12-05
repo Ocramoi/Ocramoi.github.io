@@ -32,7 +32,7 @@ jobs:
       - name: Build files
         run: |
           ls ${{ github.workspace }}
-          cd ${{ github.workspace }}/napala/interface
+          cd /home/runner/work/Ocramoi.github.io/napala/interface
           yarn build
       - name: Checkout
         uses: actions/checkout@v4
